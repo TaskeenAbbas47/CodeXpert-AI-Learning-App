@@ -1,0 +1,481 @@
+/* eslint-disable react-native/no-inline-styles */
+import React, { useEffect, useState, useRef, useCallback } from "react";
+import {
+  View,
+  Text,
+  StyleSheet,
+  TouchableOpacity,
+  FlatList,
+  Image,
+  ActivityIndicator,
+  LayoutAnimation,
+  Platform,
+  UIManager,
+} from "react-native";
+
+import LottieView from "lottie-react-native";
+import firestore from "@react-native-firebase/firestore";
+import auth from "@react-native-firebase/auth";
+
+import { useBackWithAnim } from "../hooks/useBackWithAnim";
+import CourseRoadmap from "../components/CourseRoadmap";
+import LessonView from "../components/LessonView";
+import { loadCourse } from "../utils/courseManager";
+import {
+  markLessonComplete,
+  unlockNextLesson,
+  listenToSectionProgress,
+  updateOverallCourseProgress,
+} from "../utils/progressManager";
+
+import { useThemeStyles } from "../hooks/useThemeStyles";
+
+// Enable Layout Animation
+if (Platform.OS === 'android' && UIManager.setLayoutAnimationEnabledExperimental) {
+  UIManager.setLayoutAnimationEnabledExperimental(true);
+}
+
+export default function PythonCourse({ _navigation }: any) {
+  const { styles, colors } = useThemeStyles(styleGenerator);
+
+  const [course, setCourse] = useState<any | null>(null);
+  const [selectedSection, setSelectedSection] = useState<any | null>(null);
+  const [selectedLesson, setSelectedLesson] = useState<any | null>(null);
+  
+  // Stores progress for ALL lessons across ALL sections
+  const [lessonStates, setLessonStates] = useState<
+    Record<string, { unlocked?: boolean; completed?: boolean }>
+  >({});
+  
+  const [loading, setLoading] = useState(true);
+  const [showBackAnim, setShowBackAnim] = useState(false);
+
+  const animationRef = useRef<LottieView>(null);
+  const timeoutRef = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const user = auth().currentUser;
+
+  // --- Animation Logic ---
+  const playBackAnim = () =>
+    new Promise<void>((resolve) => {
+      setShowBackAnim(true);
+      animationRef.current?.play();
+      timeoutRef.current = setTimeout(() => {
+        setShowBackAnim(false);
+        resolve();
+      }, 900);
+    });
+
+  const { handleBackPress } = useBackWithAnim(playBackAnim, "HomeScreen");
+
+  // --- Helper: Get Full Lesson Object ---
+  const getFullLesson = useCallback(
+    (section: any, lessonId: string) => {
+      const fromSection = section?.lessons?.find(
+        (l: any) => String(l.id) === String(lessonId)
+      );
+      
+      if (fromSection) {
+        return { 
+            ...fromSection, 
+            content: fromSection.content || [],
+            consoleExercise: fromSection.consoleExercise || null,
+            quiz: fromSection.quiz || null
+        };
+      }
+      return { id: lessonId, title: "Lesson", content: [] };
+    },
+    []
+  );
+
+  // --- 1. Load Course Data ---
+  useEffect(() => {
+    let mounted = true;
+    const init = async () => {
+      try {
+        const data = await loadCourse("python_linear_mastery");
+        
+        if (mounted) {
+            if (data) {
+                setCourse(data);
+                // Note: Removed auto-select section so we can see the list view first
+            } else {
+                console.error("Course data missing.");
+            }
+        }
+      } catch (e) {
+        console.warn("loadCourse failed", e);
+      } finally {
+        if (mounted) setLoading(false);
+      }
+    };
+    init();
+    return () => {
+      mounted = false;
+      if (timeoutRef.current) clearTimeout(timeoutRef.current);
+    };
+  }, []);
+
+  // --- 2. Listen to Progress (UPDATED TO FIX MAIN VIEW) ---
+  useEffect(() => {
+    if (!user || !course) return;
+
+    const unsubscribers: (() => void)[] = [];
+
+    course.sections.forEach((section: any) => {
+        const unsub = listenToSectionProgress(
+            user.uid,
+            "python",
+            String(section.id),
+            (progress) => {
+                if (progress) {
+                    setLessonStates(prev => ({ ...prev, ...progress }));
+                }
+            }
+        );
+        unsubscribers.push(unsub);
+    });
+
+    // Ensure Lesson 1 of Section 1 is unlocked for new users
+    (async () => {
+      try {
+        const firstSection = course.sections[0];
+        const firstLessonId = firstSection?.lessons?.[0]?.id;
+        
+        if (!firstLessonId) return;
+        
+        const docRef = firestore()
+          .collection("users")
+          .doc(user.uid)
+          .collection("progress")
+          .doc("python")
+          .collection("sections")
+          .doc(String(firstSection.id))
+          .collection("lessons")
+          .doc(String(firstLessonId));
+          
+          
+        const snap = await docRef.get();
+        if (!snap.exists) {
+          await docRef.set({ unlocked: true, completed: false }, { merge: true });
+        }
+      } catch (e) { console.warn("Ensure first lesson failed", e); }
+    })();
+
+    // Cleanup all listeners when component unmounts
+    return () => {
+        unsubscribers.forEach(unsub => unsub());
+    };
+  }, [user, course]);
+
+  // --- 3. Calculations ---
+  const calculateSectionProgress = useCallback(
+    (section: any) => {
+      const total = section?.lessons?.length || 0;
+      if (total === 0) return 0;
+      
+      // Count how many lessons in this section are marked completed in lessonStates
+      const completed = section.lessons.filter(
+        (l: any) => lessonStates[String(l.id)]?.completed
+      ).length;
+      
+      return Math.round((completed / total) * 100) || 0;
+    },
+    [lessonStates]
+  );
+
+  // Calculate Overall Progress
+  const overallProgress = course?.sections
+    ? Math.round(
+        (course.sections.reduce(
+          (acc: number, s: any) => acc + calculateSectionProgress(s),
+          0
+        ) / (course.sections.length || 1)) || 0
+      )
+    : 0;
+
+  // Sync Overall Progress to Firebase (for Home Screen)
+  useEffect(() => {
+    if (user && course) {
+        updateOverallCourseProgress(user.uid, "python", overallProgress);
+    }
+  }, [overallProgress, user, course]);
+
+  // --- 4. Handlers ---
+  const handleLessonComplete = async () => {
+    const uid = auth().currentUser?.uid;
+    if (!uid || !selectedSection || !selectedLesson) return;
+
+    const sectionId = String(selectedSection.id);
+    const lessonId = String(selectedLesson.id);
+
+    // Optimistic Update
+    setLessonStates(prev => ({
+        ...prev,
+        [lessonId]: { ...prev[lessonId], completed: true, unlocked: true }
+    }));
+
+    try {
+      await markLessonComplete(uid, "python", sectionId, lessonId);
+
+      const idx = selectedSection.lessons.findIndex(
+        (l: any) => String(l.id) === lessonId
+      );
+      const next = selectedSection.lessons[idx + 1];
+
+      if (next) {
+        const nextId = String(next.id);
+        
+        // Optimistically unlock next
+        setLessonStates(prev => ({
+            ...prev,
+            [nextId]: { ...prev[nextId], unlocked: true }
+        }));
+
+        await unlockNextLesson(uid, "python", sectionId, nextId);
+        
+        const nextLessonFull = getFullLesson(selectedSection, nextId);
+        setSelectedLesson(nextLessonFull);
+      } else {
+        setSelectedLesson(null); 
+      }
+    } catch (err) {
+      console.error("handleLessonComplete error", err);
+    }
+  };
+
+  const handleBack = () => {
+    LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+    if (selectedLesson) {
+        setSelectedLesson(null);
+    } else if (selectedSection) {
+        // Go back to Section List
+        setSelectedSection(null);
+    } else {
+        handleBackPress();
+    }
+  };
+
+  if (loading) {
+    return (
+      <View style={styles.loadingContainer}>
+        <ActivityIndicator color={colors.primary} size="large" />
+      </View>
+    );
+  }
+
+  if (!course) {
+    return (
+        <View style={styles.loadingContainer}>
+            <Text style={{color: colors.textSecondary, marginBottom: 10}}>
+                Course Content Not Found
+            </Text>
+            <TouchableOpacity onPress={handleBackPress}>
+                <Text style={{color: colors.primary, fontWeight: 'bold'}}>Go Back</Text>
+            </TouchableOpacity>
+        </View>
+    )
+  }
+
+  return (
+    <View style={styles.container}>
+      {showBackAnim && (
+        <View style={styles.backAnimOverlay}>
+          <LottieView
+            ref={animationRef}
+            source={require("../Assets/backAnimation.json")}
+            autoPlay
+            loop={false}
+            style={styles.backAnim}
+          />
+        </View>
+      )}
+
+      {/* Header */}
+      <View style={styles.header}>
+        <TouchableOpacity onPress={handleBack}>
+          <Image
+            source={require("../Assets/back.png")}
+            style={[styles.backIcon, { tintColor: colors.icon }]}
+          />
+        </TouchableOpacity>
+        <Text style={styles.headerTitle}>
+          {selectedLesson ? selectedLesson.title : "Python Master"}
+        </Text>
+      </View>
+
+      {/* VIEW 1: Section List */}
+      {!selectedSection && !selectedLesson && (
+        <FlatList
+          data={course?.sections || []}
+          keyExtractor={(item: any) => String(item.id)}
+          ListHeaderComponent={
+            <Text style={styles.courseProgress}>Overall Progress: {overallProgress}%</Text>
+          }
+          renderItem={({ item }: any) => {
+            const progress = calculateSectionProgress(item);
+            return (
+              <TouchableOpacity
+                style={styles.sectionCard}
+                onPress={() => setSelectedSection(item)}
+              >
+                <View style={styles.sectionContent}>
+                  <Text style={styles.sectionTitle}>{item.title}</Text>
+                  <View style={styles.progressBarContainer}>
+                    <View
+                      style={[
+                        styles.progressBarFill,
+                        { width: `${progress}%`, backgroundColor: colors.primary },
+                      ]}
+                    />
+                  </View>
+                  <Text style={styles.progressText}>{progress}% completed</Text>
+                </View>
+              </TouchableOpacity>
+            );
+          }}
+          contentContainerStyle={styles.listContent}
+        />
+      )}
+
+      {/* VIEW 2: Roadmap */}
+      {selectedSection && !selectedLesson && (
+        <CourseRoadmap
+          title="Python"
+          subtitle={selectedSection.title}
+          progress={calculateSectionProgress(selectedSection)}
+          iconLanguage={require("../Assets/python.png")}
+          levels={selectedSection.lessons.map((lesson: any, i: number) => ({
+            id: String(lesson.id),
+            title: lesson.title,
+            unlocked: lessonStates[String(lesson.id)]?.unlocked || i === 0,
+            completed: lessonStates[String(lesson.id)]?.completed || false,
+            // 🟢 DYNAMIC CHECK: Calculates if this is the very last lesson in the current section
+            isFinalLesson: i === selectedSection.lessons.length - 1, 
+          }))}
+          onLevelPress={(level: any) => { // Added :any to prevent TS errors on the new injected prop
+            const unlocked =
+              lessonStates[String(level.id)]?.unlocked ||
+              selectedSection.lessons[0].id === level.id;
+            
+            if (!unlocked) return;
+            
+            const full = getFullLesson(selectedSection, String(level.id));
+            
+            // 🟢 ATTACH FLAG: Pass the boolean from the roadmap box into the full lesson object
+            full.isFinalLesson = level.isFinalLesson;
+
+            LayoutAnimation.configureNext(LayoutAnimation.Presets.easeInEaseOut);
+            setSelectedLesson(full);
+          }}
+          onCenterPress={() => console.log("AI Help")}
+        />
+      )}
+
+      {/* VIEW 3: Interactive Lesson */}
+      {selectedLesson && (
+        <LessonView
+          courseId="python"
+          sectionId={String(selectedSection.id)}
+          lessonId={String(selectedLesson.id)}
+          lessonContent={selectedLesson}
+          // 🟢 PASS THE FLAG: Give LessonView the green light to show the Certificate Modal
+          isFinalLesson={selectedLesson.isFinalLesson} 
+          onBack={() => setSelectedLesson(null)}
+          onComplete={handleLessonComplete}
+        />
+      )}
+    </View>
+  );
+}
+// 3. Style Generator
+export const styleGenerator = (colors: any) => StyleSheet.create({
+  container: { 
+    flex: 1, 
+    backgroundColor: colors.background 
+  },
+  header: {
+    flexDirection: "row",
+    alignItems: "center",
+    padding: 20,
+    borderBottomWidth: 1,
+    borderBottomColor: colors.border || "#222",
+    backgroundColor: colors.background,
+    zIndex: 10,
+  },
+  backIcon: { 
+    width: 24, 
+    height: 24, 
+    marginRight: 15,
+    resizeMode: 'contain' 
+  },
+  headerTitle: { 
+    fontSize: 18, 
+    color: colors.textPrimary, 
+    fontFamily: "Poppins-SemiBold",
+    flex: 1, 
+  },
+  courseProgress: {
+    color: colors.textSecondary,
+    fontSize: 14,
+    marginBottom: 15,
+    fontFamily: "Poppins-Medium",
+    textAlign: 'center'
+  },
+  sectionCard: {
+    backgroundColor: colors.card,
+    borderRadius: 16,
+    padding: 18,
+    marginBottom: 15,
+    borderWidth: 1,
+    borderColor: colors.border || "#333",
+    shadowColor: "#000",
+    shadowOffset: { width: 0, height: 4 },
+    shadowOpacity: 0.1,
+    shadowRadius: 6,
+    elevation: 3,
+  },
+  sectionContent: { flex: 1 },
+  sectionTitle: {
+    color: colors.textPrimary,
+    fontSize: 16,
+    fontFamily: "Poppins-Bold",
+    marginBottom: 10,
+  },
+  progressBarContainer: {
+    width: "100%",
+    height: 6,
+    backgroundColor: colors.border || "#2D2D55",
+    borderRadius: 10,
+    marginBottom: 8,
+    overflow: 'hidden'
+  },
+  progressBarFill: {
+    height: "100%",
+    borderRadius: 10,
+  },
+  progressText: {
+    color: colors.textSecondary,
+    fontSize: 12,
+    fontFamily: "Poppins-Regular",
+  },
+  listContent: { padding: 20 },
+  loadingContainer: {
+    flex: 1,
+    justifyContent: "center",
+    alignItems: "center",
+    backgroundColor: colors.background
+  },
+  backAnimOverlay: {
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    bottom: 0,
+    backgroundColor: colors.background,
+    justifyContent: "center",
+    alignItems: "center",
+    zIndex: 100,
+  },
+  backAnim: { width: 180, height: 180 },
+});

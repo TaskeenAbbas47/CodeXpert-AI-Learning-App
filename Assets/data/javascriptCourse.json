@@ -1,0 +1,519 @@
+{
+  "id": "javascript_linear_mastery",
+  "title": "JavaScript: The Brain",
+  "sections": [
+    {
+      "id": "main_track",
+      "title": "The Complete Path",
+      "lessons": [
+        {
+          "id": "1",
+          "title": "1. Variables (Memory)",
+          "overview": "How the computer remembers information.",
+          "concepts": ["let", "const", "Assignment"],
+          "example": "let score = 0;",
+          "content": [
+            {
+              "stepTitle": " The Memory Box",
+              "stepDetail": "Imagine a variable as a labeled box. You can put data inside it to save it for later.",
+              "stepImage": "js_variables_visual"
+            },
+            {
+              "stepTitle": "let vs const",
+              "stepDetail": "Use `let` if the contents of the box will change (like a score). Use `const` if it stays the same (like an ID)."
+            }
+          ],
+          "quiz": {
+            "question": "Which keyword creates a variable that cannot change?",
+            "options": ["var", "let", "const"],
+            "correctAnswer": "const",
+            "hint": "Constant."
+          },
+          "consoleExercise": {
+            "prompt": "Create a variable 'name' using let and set it to 'Alex'.",
+            "solution": "let name = 'Alex';",
+            "successMessage": "Data stored in memory."
+          }
+        },
+        {
+          "id": "2",
+          "title": "2. Data Types",
+          "overview": "The different shapes of data.",
+          "concepts": ["String", "Number", "Boolean"],
+          "example": "let active = true;",
+          "content": [
+            {
+              "stepTitle": "Text vs Math",
+              "stepDetail": "`String` is text (wrapped in quotes). `Number` is for math (no quotes). `Boolean` is just true/false switch."
+            }
+          ],
+          "quiz": {
+            "question": "Which of these is a String?",
+            "options": ["25", "'25'", "true"],
+            "correctAnswer": "'25'",
+            "hint": "Look for the quotes."
+          },
+          "consoleExercise": {
+            "prompt": "Create a variable 'age' and set it to the number 20.",
+            "solution": "let age = 20;",
+            "successMessage": "Number type assigned."
+          }
+        },
+        {
+          "id": "3",
+          "title": "3. Functions (The Machine)",
+          "overview": "Grouping code into reusable actions.",
+          "concepts": ["function", "()", "{}"],
+          "example": "function jump() { ... }",
+          "content": [
+            {
+              "stepTitle": "The Factory Machine",
+              "stepDetail": "A function is a machine. You build it once, and then you can turn it on (call it) as many times as you want.",
+              "stepImage": "js_function_visual"
+            }
+          ],
+          "quiz": {
+            "question": "How do you run (call) a function named 'run'?",
+            "options": ["run", "run[]", "run()"],
+            "correctAnswer": "run()",
+            "hint": "Parentheses act as the 'On' button."
+          },
+          "consoleExercise": {
+            "prompt": "Define a function named 'greet'.",
+            "solution": "function greet() {}",
+            "successMessage": "Machine built."
+          }
+        },
+        {
+          "id": "4",
+          "title": "4. Parameters & Arguments",
+          "overview": "Feeding data into your functions.",
+          "concepts": ["Input", "Passing Data"],
+          "example": "function say(text) { ... }",
+          "content": [
+            {
+              "stepTitle": "The Input Slot",
+              "stepDetail": "Parameters are like slots in the machine where you insert materials (data) for it to process."
+            }
+          ],
+          "quiz": {
+            "question": "In 'function add(x)', what is x?",
+            "options": ["The output", "The name", "The parameter"],
+            "correctAnswer": "The parameter",
+            "hint": "It's the input variable."
+          },
+          "consoleExercise": {
+            "prompt": "Create function 'log' that takes 'msg' as input.",
+            "solution": "function log(msg) {}",
+            "successMessage": "Input slot created."
+          }
+        },
+        {
+          "id": "5",
+          "title": "5. Logic (If/Else)",
+          "overview": "Teaching the computer to make decisions.",
+          "concepts": ["if", "else", "Conditions"],
+          "example": "if (score > 10) { win(); }",
+          "content": [
+            {
+              "stepTitle": "The Fork in the Road",
+              "stepDetail": "Code runs top-to-bottom. An `if` statement creates a fork. The computer checks a condition to decide which path to take.",
+              "stepImage": "js_logic_visual"
+            }
+          ],
+          "quiz": {
+            "question": "When does the 'else' block run?",
+            "options": ["When condition is true", "When condition is false", "Always"],
+            "correctAnswer": "When condition is false",
+            "hint": "It's the backup plan."
+          },
+          "consoleExercise": {
+            "prompt": "Write: if x is greater than 5, run 'win()'.",
+            "solution": "if (x > 5) { win(); }",
+            "successMessage": "Decision logic active."
+          }
+        },
+        {
+          "id": "6",
+          "title": "6. Arrays (Lists)",
+          "overview": "Storing multiple items in one variable.",
+          "concepts": ["[ ]", "Index", "Length"],
+          "example": "let colors = ['red', 'blue'];",
+          "content": [
+            {
+              "stepTitle": "The Shelf",
+              "stepDetail": "An Array is an ordered shelf. Each slot has a number (index) starting at 0."
+            },
+            {
+              "stepTitle": "Accessing Items",
+              "stepDetail": "To get the first item, you look at index 0: `colors[0]`."
+            }
+          ],
+          "quiz": {
+            "question": "What is the index of the first item?",
+            "options": ["1", "0", "A"],
+            "correctAnswer": "0",
+            "hint": "Computers count from zero."
+          },
+          "consoleExercise": {
+            "prompt": "Create an array 'nums' with 1, 2, 3.",
+            "solution": "let nums = [1, 2, 3];",
+            "successMessage": "List created."
+          }
+        },
+        {
+          "id": "7",
+          "title": "7. Loops (Repetition)",
+          "overview": "Doing the same thing over and over.",
+          "concepts": ["for loop", "Iteration"],
+          "example": "for(let i=0; i<5; i++) { ... }",
+          "content": [
+            {
+              "stepTitle": "The Cycle",
+              "stepDetail": "Don't copy-paste code 100 times. Use a loop to run one block of code 100 times."
+            },
+            {
+              "stepTitle": "Anatomy",
+              "stepDetail": "1. Start (`let i=0`). 2. Stop condition (`i < 5`). 3. Step (`i++` adds 1 each time).",
+              "stepImage": "js_loop_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What does i++ do?",
+            "options": ["Subtracts 1", "Adds 1", "Resets to 0"],
+            "correctAnswer": "Adds 1",
+            "hint": "Increment."
+          },
+          "consoleExercise": {
+            "prompt": "Write a loop that runs while i < 10.",
+            "solution": "for(let i=0; i<10; i++) {}",
+            "successMessage": "Automation achieved."
+          }
+        },
+        {
+          "id": "8",
+          "title": "8. Objects (Dictionaries)",
+          "overview": "Describing complex data with labels.",
+          "concepts": ["{ }", "Key-Value", "Dot Notation"],
+          "example": "let user = { name: 'Sam', age: 25 };",
+          "content": [
+            {
+              "stepTitle": "Key-Value Pairs",
+              "stepDetail": "Arrays use numbers. Objects use names (Keys). It's like a contact card: `Name: Sam`, `Phone: 555`."
+            },
+            {
+              "stepTitle": "Dot Notation",
+              "stepDetail": "To get data out, use the dot: `user.name`."
+            }
+          ],
+          "quiz": {
+            "question": "How do you access the 'age' inside 'p1'?",
+            "options": ["p1[age]", "p1.age", "age.p1"],
+            "correctAnswer": "p1.age",
+            "hint": "Use the dot."
+          },
+          "consoleExercise": {
+            "prompt": "Create object 'car' with key 'color': 'red'.",
+            "solution": "let car = { color: 'red' };",
+            "successMessage": "Object created."
+          }
+        },
+        {
+          "id": "9",
+          "title": "9. The DOM (The Webpage)",
+          "overview": "Connecting JavaScript to HTML.",
+          "concepts": ["document", "Tree Structure"],
+          "example": "document.body",
+          "content": [
+            {
+              "stepTitle": "The Bridge",
+              "stepDetail": "The DOM (Document Object Model) is how JS sees HTML. It turns your HTML tags into a tree of Objects that JS can touch.",
+              "stepImage": "js_dom_tree_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What object represents the whole webpage?",
+            "options": ["window", "html", "document"],
+            "correctAnswer": "document",
+            "hint": "It is the document you wrote."
+          },
+          "consoleExercise": {
+            "prompt": "Access the body element via document.",
+            "solution": "document.body",
+            "successMessage": "You have grabbed the HTML."
+          }
+        },
+        {
+          "id": "10",
+          "title": "10. Selecting Elements",
+          "overview": "Grabbing specific HTML elements to change them.",
+          "concepts": ["querySelector", "getElementById"],
+          "example": "document.querySelector('.box')",
+          "content": [
+            {
+              "stepTitle": "The Claw",
+              "stepDetail": "`querySelector` is like a claw machine. You give it a CSS selector (like `.box`), and it grabs the first matching element."
+            }
+          ],
+          "quiz": {
+            "question": "Which method grabs an element by its ID?",
+            "options": ["queryID", "getElementById", "grabID"],
+            "correctAnswer": "getElementById",
+            "hint": "It literally says 'get element by id'."
+          },
+          "consoleExercise": {
+            "prompt": "Select the element with class 'hero'.",
+            "solution": "document.querySelector('.hero')",
+            "successMessage": "Element selected."
+          }
+        },
+        {
+          "id": "11",
+          "title": "11. Changing Content",
+          "overview": "Rewriting the page dynamically.",
+          "concepts": ["innerText", "innerHTML"],
+          "example": "title.innerText = 'Hello';",
+          "content": [
+            {
+              "stepTitle": "Rewriting History",
+              "stepDetail": "Once you select an element into a variable, you can change its text using the `.innerText` property."
+            }
+          ],
+          "quiz": {
+            "question": "Which property changes the text inside a tag?",
+            "options": ["text", "content", "innerText"],
+            "correctAnswer": "innerText",
+            "hint": "The text inside."
+          },
+          "consoleExercise": {
+            "prompt": "Set h1.innerText to 'Welcome'.",
+            "solution": "h1.innerText = 'Welcome';",
+            "successMessage": "The page updated without reloading!"
+          }
+        },
+        {
+          "id": "12",
+          "title": "12. Changing Styles",
+          "overview": "CSS manipulation via JavaScript.",
+          "concepts": [".style", "CamelCase"],
+          "example": "box.style.backgroundColor = 'red';",
+          "content": [
+            {
+              "stepTitle": "JS vs CSS",
+              "stepDetail": "In JS, we can't use dashes like `background-color`. We use CamelCase: `backgroundColor`."
+            }
+          ],
+          "quiz": {
+            "question": "How do you write 'font-size' in JS?",
+            "options": ["font-size", "fontSize", "fontsize"],
+            "correctAnswer": "fontSize",
+            "hint": "CamelCase: hump in the middle."
+          },
+          "consoleExercise": {
+            "prompt": "Set div.style.color to 'blue'.",
+            "solution": "div.style.color = 'blue';",
+            "successMessage": "You are painting with code."
+          }
+        },
+        {
+          "id": "13",
+          "title": "13. Events (Listening)",
+          "overview": "Reacting to user actions.",
+          "concepts": ["addEventListener", "click"],
+          "example": "btn.addEventListener('click', run);",
+          "content": [
+            {
+              "stepTitle": "The Listener",
+              "stepDetail": "You can attach an 'Ear' to any element. It waits for a specific event (like a 'click') and runs a function when it hears it.",
+              "stepImage": "js_events_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What is the function that attaches an event?",
+            "options": ["listen", "addEventListener", "watch"],
+            "correctAnswer": "addEventListener",
+            "hint": "It adds a listener."
+          },
+          "consoleExercise": {
+            "prompt": "Add a 'click' listener to 'btn' that runs 'fire'.",
+            "solution": "btn.addEventListener('click', fire);",
+            "successMessage": "Listening for clicks."
+          }
+        },
+        {
+          "id": "14",
+          "title": "14. Inputs & Values",
+          "overview": "Getting what the user typed.",
+          "concepts": [".value", "Forms"],
+          "example": "let text = input.value;",
+          "content": [
+            {
+              "stepTitle": "Reading Fields",
+              "stepDetail": "For `<input>` boxes, `.innerText` doesn't work. You must use `.value` to see what the user typed."
+            }
+          ],
+          "quiz": {
+            "question": "How do you get text from an input box?",
+            "options": [".text", ".inner", ".value"],
+            "correctAnswer": ".value",
+            "hint": "The value of the input."
+          },
+          "consoleExercise": {
+            "prompt": "Save input.value into variable 'data'.",
+            "solution": "let data = input.value;",
+            "successMessage": "User input captured."
+          }
+        },
+        {
+          "id": "15",
+          "title": "15. Creating Elements",
+          "overview": "Adding new tags to the page from scratch.",
+          "concepts": ["createElement", "appendChild"],
+          "example": "document.createElement('div')",
+          "content": [
+            {
+              "stepTitle": "Birth of a Tag",
+              "stepDetail": "`createElement` makes a new tag floating in memory. It isn't visible yet."
+            },
+            {
+              "stepTitle": "Attaching It",
+              "stepDetail": "`appendChild` takes that floating element and glues it onto the page (usually to the body or a div)."
+            }
+          ],
+          "quiz": {
+            "question": "Which method adds an element to the page?",
+            "options": ["addToPage", "appendChild", "push"],
+            "correctAnswer": "appendChild",
+            "hint": "Append means add to the end."
+          },
+          "consoleExercise": {
+            "prompt": "Create a 'p' tag element.",
+            "solution": "document.createElement('p')",
+            "successMessage": "Element created in memory."
+          }
+        },
+        {
+          "id": "16",
+          "title": "16. Class Manipulation",
+          "overview": "Toggling CSS classes for complex changes.",
+          "concepts": ["classList", "add", "remove", "toggle"],
+          "example": "box.classList.add('active');",
+          "content": [
+            {
+              "stepTitle": "Smart Styling",
+              "stepDetail": "Instead of changing 10 styles manually in JS, just add a CSS class that has those styles already."
+            }
+          ],
+          "quiz": {
+            "question": "How do you switch a class on and off?",
+            "options": ["switch", "toggle", "change"],
+            "correctAnswer": "toggle",
+            "hint": "Like a light switch."
+          },
+          "consoleExercise": {
+            "prompt": "Add the class 'hidden' to 'menu.classList'.",
+            "solution": "menu.classList.add('hidden');",
+            "successMessage": "Class applied."
+          }
+        },
+        {
+          "id": "17",
+          "title": "17. Higher Order Functions",
+          "overview": "Passing functions into other functions.",
+          "concepts": ["Callback", "Anonymous Function"],
+          "example": "setTimeout(() => { ... }, 1000);",
+          "content": [
+            {
+              "stepTitle": "Functions as Data",
+              "stepDetail": "In JS, functions are values. You can pass a function into another function just like a number. This is a 'Callback'."
+            }
+          ],
+          "quiz": {
+            "question": "What is a function passed into another function called?",
+            "options": ["A Loop", "A Callback", "A Variable"],
+            "correctAnswer": "A Callback",
+            "hint": "It gets 'called back' later."
+          },
+          "consoleExercise": {
+            "prompt": "Pass a function 'run' into 'start()'.",
+            "solution": "start(run)",
+            "successMessage": "Advanced concept mastered."
+          }
+        },
+        {
+          "id": "18",
+          "title": "18. Async & Promises",
+          "overview": "Dealing with time and waiting.",
+          "concepts": ["Asynchronous", "Promise", "then"],
+          "example": "fetch(url).then(...)",
+          "content": [
+            {
+              "stepTitle": "The Waiting Game",
+              "stepDetail": "Some things take time (like downloading data). JS doesn't stop; it continues working and promises to notify you when the download is done.",
+              "stepImage": "js_async_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What represents a future value?",
+            "options": ["Loop", "Promise", "String"],
+            "correctAnswer": "Promise",
+            "hint": "It promises to return data."
+          },
+          "consoleExercise": {
+            "prompt": "Call fetch('api.com').",
+            "solution": "fetch('api.com')",
+            "successMessage": "Request sent."
+          }
+        },
+        {
+          "id": "19",
+          "title": "19. Async / Await",
+          "overview": "Modern syntax for waiting.",
+          "concepts": ["async", "await"],
+          "example": "let data = await fetch(url);",
+          "content": [
+            {
+              "stepTitle": "Pausing Time",
+              "stepDetail": "`await` literally pauses the function until the data arrives. It makes complex code look simple and linear."
+            }
+          ],
+          "quiz": {
+            "question": "Which keyword pauses execution?",
+            "options": ["stop", "await", "wait"],
+            "correctAnswer": "await",
+            "hint": "It awaits the result."
+          },
+          "consoleExercise": {
+            "prompt": "Await the result of 'getData()'.",
+            "solution": "await getData()",
+            "successMessage": "Modern async handling."
+          }
+        },
+        {
+          "id": "20",
+          "title": "20. Final Project: Logic",
+          "overview": "Combine DOM, Events, and Arrays.",
+          "concepts": ["Application State", "Rendering"],
+          "example": "toDoList.push(newItem); render();",
+          "content": [
+            {
+              "stepTitle": "The Pattern",
+              "stepDetail": "1. User types (Input). 2. JS updates data (Array). 3. JS updates screen (DOM). This is the loop of all apps."
+            }
+          ],
+          "quiz": {
+            "question": "What should update when data changes?",
+            "options": ["The Server", "The DOM (UI)", "The Browser Version"],
+            "correctAnswer": "The DOM (UI)",
+            "hint": "The user needs to see the change."
+          },
+          "consoleExercise": {
+            "prompt": "Call the render() function to update the screen.",
+            "solution": "render()",
+            "successMessage": "Congratulations! You are a JavaScript Developer."
+          }
+        }
+      ]
+    }
+  ]
+}

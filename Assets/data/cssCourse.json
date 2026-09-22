@@ -1,0 +1,403 @@
+{
+  "id": "css_linear_mastery",
+  "title": "CSS3: The Stylist",
+  "sections": [
+    {
+      "id": "main_track",
+      "title": "The Complete Path",
+      "lessons": [
+        {
+          "id": "1",
+          "title": "1. The Syntax",
+          "overview": "Learn how to talk to the browser to change how things look.",
+          "concepts": ["Selectors", "Properties", "Values"],
+          "example": "h1 { color: red; }",
+          "content": [
+            {
+              "stepTitle": "The Rule Set",
+              "stepDetail": "CSS is a list of rules. You pick something (Selector), open brackets `{}`, and change a property (like color).",
+              "stepImage": "css_syntax_visual"
+            },
+            {
+              "stepTitle": "Punctuation",
+              "stepDetail": "Don't forget the colon `:` after the property and the semicolon `;` after the value. It's strict!"
+            }
+          ],
+          "quiz": {
+            "question": "Which symbol ends a CSS line?",
+            "options": [".", ";", ":"],
+            "correctAnswer": ";",
+            "hint": "It acts like a full stop."
+          },
+          "consoleExercise": {
+            "prompt": "Write a rule to make h1 text blue.",
+            "solution": "h1 { color: blue; }",
+            "successMessage": "You just styled your first element!"
+          }
+        },
+        {
+          "id": "2",
+          "title": "2. Classes vs IDs",
+          "overview": "Target specific groups or unique elements.",
+          "concepts": [".class", "#id", "Specificity"],
+          "example": ".btn { color: white; }",
+          "content": [
+            {
+              "stepTitle": "The Dot (.) for Classes",
+              "stepDetail": "To target `class='box'`, use `.box`. This applies to MANY elements at once."
+            },
+            {
+              "stepTitle": "The Hash (#) for IDs",
+              "stepDetail": "To target `id='header'`, use `#header`. This applies to ONE unique element.",
+              "stepImage": "css_selectors_visual"
+            }
+          ],
+          "quiz": {
+            "question": "How do you select a class named 'card'?",
+            "options": ["#card", "card", ".card"],
+            "correctAnswer": ".card",
+            "hint": "Classes start with a dot."
+          },
+          "consoleExercise": {
+            "prompt": "Target the class 'menu' and set width to 100px.",
+            "solution": ".menu { width: 100px; }",
+            "successMessage": "Target acquired."
+          }
+        },
+        {
+          "id": "3",
+          "title": "3. Colors & Backgrounds",
+          "overview": "Bring your site to life with paint.",
+          "concepts": ["color", "background-color", "Hex Codes"],
+          "example": "body { background-color: #222; }",
+          "content": [
+            {
+              "stepTitle": "Text vs Background",
+              "stepDetail": "`color` changes the text. `background-color` changes the box behind it."
+            },
+            {
+              "stepTitle": "Hex Codes",
+              "stepDetail": "Professionals use Hex codes like `#ff0000` (Red) or `#000000` (Black) for precise shades.",
+              "stepImage": "css_colors_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Which property changes text color?",
+            "options": ["text-color", "font-color", "color"],
+            "correctAnswer": "color",
+            "hint": "It's simply 'color'."
+          },
+          "consoleExercise": {
+            "prompt": "Set the background-color of 'body' to black.",
+            "solution": "body { background-color: black; }",
+            "successMessage": "Dark mode activated!"
+          }
+        },
+        {
+          "id": "4",
+          "title": "4. The Box Model",
+          "overview": "The most important concept in layout.",
+          "concepts": ["Margin", "Border", "Padding"],
+          "example": "div { padding: 20px; }",
+          "content": [
+            {
+              "stepTitle": "Layers of the Box",
+              "stepDetail": "Every element is a box. Content is in the middle. Padding wraps it. Border wraps Padding. Margin pushes other boxes away.",
+              "stepImage": "css_box_model_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Which space is INSIDE the border?",
+            "options": ["Margin", "Padding", "Outline"],
+            "correctAnswer": "Padding",
+            "hint": "It pads the content."
+          },
+          "consoleExercise": {
+            "prompt": "Give a div 10px of padding.",
+            "solution": "div { padding: 10px; }",
+            "successMessage": "Your content has room to breathe."
+          }
+        },
+        {
+          "id": "5",
+          "title": "5. Margins (Spacing)",
+          "overview": "Creating space between elements.",
+          "concepts": ["margin", "margin-top", "centering"],
+          "example": "div { margin: 0 auto; }",
+          "content": [
+            {
+              "stepTitle": "Personal Space",
+              "stepDetail": "Margin is the invisible force field outside the border. It pushes neighbors away."
+            },
+            {
+              "stepTitle": "Auto Centering",
+              "stepDetail": "`margin: 0 auto;` is the classic trick to center a box horizontally in the middle of the screen."
+            }
+          ],
+          "quiz": {
+            "question": "Does margin affect the background color?",
+            "options": ["Yes", "No", "Sometimes"],
+            "correctAnswer": "No",
+            "hint": "Margin is invisible space outside the element."
+          },
+          "consoleExercise": {
+            "prompt": "Set a 20px margin on all sides of '.card'.",
+            "solution": ".card { margin: 20px; }",
+            "successMessage": "Spaced out nicely."
+          }
+        },
+        {
+          "id": "6",
+          "title": "6. Flexbox (Alignment)",
+          "overview": "The modern way to lay out rows and columns.",
+          "concepts": ["display: flex", "justify-content", "align-items"],
+          "example": ".row { display: flex; }",
+          "content": [
+            {
+              "stepTitle": "The Magic Switch",
+              "stepDetail": "Setting `display: flex;` on a container turns its children into flexible items that can sit side-by-side.",
+              "stepImage": "css_flexbox_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Which property aligns items horizontally (main axis)?",
+            "options": ["align-items", "justify-content", "flex-direction"],
+            "correctAnswer": "justify-content",
+            "hint": "It justifies the content along the line."
+          },
+          "consoleExercise": {
+            "prompt": "Turn '.nav' into a flex container.",
+            "solution": ".nav { display: flex; }",
+            "successMessage": "Welcome to modern layouts."
+          }
+        },
+        {
+          "id": "7",
+          "title": "7. Flex Direction",
+          "overview": "Rows vs Columns.",
+          "concepts": ["flex-direction", "column", "row-reverse"],
+          "example": ".box { flex-direction: column; }",
+          "content": [
+            {
+              "stepTitle": "Changing Axes",
+              "stepDetail": "By default, flexbox goes Left-to-Right (`row`). Change it to `column` to stack items Top-to-Bottom."
+            }
+          ],
+          "quiz": {
+            "question": "How do you stack flex items vertically?",
+            "options": ["flex-wrap: wrap", "display: block", "flex-direction: column"],
+            "correctAnswer": "flex-direction: column",
+            "hint": "Like a skyscraper."
+          },
+          "consoleExercise": {
+            "prompt": "Make '.menu' stack vertically using flex-direction.",
+            "solution": ".menu { flex-direction: column; }",
+            "successMessage": "Stacked and ready."
+          }
+        },
+        {
+          "id": "8",
+          "title": "8. CSS Grid",
+          "overview": "Advanced 2D layouts made easy.",
+          "concepts": ["display: grid", "grid-template-columns"],
+          "example": "div { grid-template-columns: 1fr 1fr; }",
+          "content": [
+            {
+              "stepTitle": "The Graph Paper",
+              "stepDetail": "Grid divides the container into literal rows and columns. It's more powerful than Flexbox for full-page layouts.",
+              "stepImage": "css_grid_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What unit represents a 'fraction' of space in Grid?",
+            "options": ["%", "px", "fr"],
+            "correctAnswer": "fr",
+            "hint": "It stands for Fraction."
+          },
+          "consoleExercise": {
+            "prompt": "Create a grid with two equal columns (1fr 1fr).",
+            "solution": "div { grid-template-columns: 1fr 1fr; }",
+            "successMessage": "Grid locked in."
+          }
+        },
+        {
+          "id": "9",
+          "title": "9. Text Styling",
+          "overview": "Fonts, sizes, and weights.",
+          "concepts": ["font-family", "font-size", "font-weight"],
+          "example": "p { font-size: 16px; font-weight: bold; }",
+          "content": [
+            {
+              "stepTitle": "Typography",
+              "stepDetail": "Use `font-family` to change the font (e.g., Arial). Use `font-weight` for thickness (bold, 400, 700)."
+            }
+          ],
+          "quiz": {
+            "question": "Which property makes text bold?",
+            "options": ["text-style", "font-weight", "bold"],
+            "correctAnswer": "font-weight",
+            "hint": "It adds weight to the letters."
+          },
+          "consoleExercise": {
+            "prompt": "Set font size of 'p' to 20px.",
+            "solution": "p { font-size: 20px; }",
+            "successMessage": "Readable and clear."
+          }
+        },
+        {
+          "id": "10",
+          "title": "10. Hover Effects",
+          "overview": "Making things interactive.",
+          "concepts": [":hover", "Pseudo-classes", "Interaction"],
+          "example": "button:hover { opacity: 0.8; }",
+          "content": [
+            {
+              "stepTitle": "Pseudo-classes",
+              "stepDetail": "Adding `:hover` after a selector creates a rule that ONLY applies when the mouse is over the element."
+            }
+          ],
+          "quiz": {
+            "question": "When does the :hover state activate?",
+            "options": ["On click", "On mouse over", "On page load"],
+            "correctAnswer": "On mouse over",
+            "hint": "When the cursor hovers."
+          },
+          "consoleExercise": {
+            "prompt": "Change color to red when hovering over 'a' tags.",
+            "solution": "a:hover { color: red; }",
+            "successMessage": "Interactive!"
+          }
+        },
+        {
+          "id": "11",
+          "title": "11. Borders & Radius",
+          "overview": "Rounding corners and adding strokes.",
+          "concepts": ["border", "border-radius", "Circles"],
+          "example": "div { border-radius: 50%; }",
+          "content": [
+            {
+              "stepTitle": "Softening the Edges",
+              "stepDetail": "`border-radius` curves the corners. Set it to `50%` to turn a square into a perfect circle."
+            }
+          ],
+          "quiz": {
+            "question": "How do you make a square into a circle?",
+            "options": ["border-round: yes", "border-radius: 50%", "circle: true"],
+            "correctAnswer": "border-radius: 50%",
+            "hint": "Radius at 50%."
+          },
+          "consoleExercise": {
+            "prompt": "Add a solid 1px black border to '.box'.",
+            "solution": ".box { border: 1px solid black; }",
+            "successMessage": "Defined edges look sharp."
+          }
+        },
+        {
+          "id": "12",
+          "title": "12. Positioning",
+          "overview": "Breaking the flow with Absolute and Relative.",
+          "concepts": ["position: relative", "position: absolute", "Top/Left"],
+          "example": ".icon { position: absolute; top: 0; }",
+          "content": [
+            {
+              "stepTitle": "Relative vs Absolute",
+              "stepDetail": "`Relative` keeps the element in the flow but unlocks movement. `Absolute` rips it out of the flow to float freely."
+            },
+            {
+              "stepTitle": "The Parent Rule",
+              "stepDetail": "An absolute child is positioned relative to the nearest 'relative' parent."
+            }
+          ],
+          "quiz": {
+            "question": "Which position removes an element from normal flow?",
+            "options": ["static", "relative", "absolute"],
+            "correctAnswer": "absolute",
+            "hint": "It floats freely."
+          },
+          "consoleExercise": {
+            "prompt": "Set position to absolute for '.overlay'.",
+            "solution": ".overlay { position: absolute; }",
+            "successMessage": "You're controlling the coordinates now."
+          }
+        },
+        {
+          "id": "13",
+          "title": "13. Shadows (Depth)",
+          "overview": "Adding 3D effects with Drop Shadows.",
+          "concepts": ["box-shadow", "text-shadow"],
+          "example": "box-shadow: 5px 5px 10px black;",
+          "content": [
+            {
+              "stepTitle": "X Y Blur Color",
+              "stepDetail": "The 4 values usually stand for: Horizontal Offset, Vertical Offset, Blur Amount, and Color."
+            }
+          ],
+          "quiz": {
+            "question": "Which value controls how fuzzy the shadow is?",
+            "options": ["Offset", "Blur", "Spread"],
+            "correctAnswer": "Blur",
+            "hint": "The third value usually."
+          },
+          "consoleExercise": {
+            "prompt": "Add a box-shadow: 10px 10px gray.",
+            "solution": "div { box-shadow: 10px 10px gray; }",
+            "successMessage": "It pops off the screen!"
+          }
+        },
+        {
+          "id": "14",
+          "title": "14. Responsive Design",
+          "overview": "Making sites look good on phones.",
+          "concepts": ["@media", "max-width", "Mobile-First"],
+          "example": "@media (max-width: 600px) { ... }",
+          "content": [
+            {
+              "stepTitle": "Media Queries",
+              "stepDetail": "You can write CSS that *only* runs if the screen is small. This is how we adapt layouts for mobile.",
+              "stepImage": "css_responsive_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Which keyword starts a responsive rule?",
+            "options": ["@screen", "@media", "@mobile"],
+            "correctAnswer": "@media",
+            "hint": "It queries the media type."
+          },
+          "consoleExercise": {
+            "prompt": "Start a media query for max-width 500px.",
+            "solution": "@media (max-width: 500px) {}",
+            "successMessage": "Adaptability is key."
+          }
+        },
+        {
+          "id": "15",
+          "title": "15. Project: Navbar",
+          "overview": "Build a responsive navigation bar.",
+          "concepts": ["Flexbox", "Padding", "Hover"],
+          "example": "nav { display: flex; justify-content: space-between; }",
+          "content": [
+            {
+              "stepTitle": "The Layout",
+              "stepDetail": "Use Flexbox to put the Logo on the left and Links on the right (`justify-content: space-between`)."
+            },
+            {
+              "stepTitle": "Interactive",
+              "stepDetail": "Remove underlines from links (`text-decoration: none`) and add a color change on hover."
+            }
+          ],
+          "quiz": {
+            "question": "How do you push flex items to opposite edges?",
+            "options": ["gap: auto", "justify-content: space-between", "align: center"],
+            "correctAnswer": "justify-content: space-between",
+            "hint": "Space between them."
+          },
+          "consoleExercise": {
+            "prompt": "Remove underlines from 'a' tags.",
+            "solution": "a { text-decoration: none; }",
+            "successMessage": "Clean and professional. You are a CSS Stylist!"
+          }
+        }
+      ]
+    }
+  ]
+}

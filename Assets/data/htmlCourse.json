@@ -1,0 +1,719 @@
+{
+  "id": "html_linear_mastery",
+  "title": "HTML5: The Web Architect",
+  "sections": [
+    {
+      "id": "main_track",
+      "title": "The Complete Path",
+      "lessons": [
+        {
+          "id": "1",
+          "title": "1. The Skeleton",
+          "overview": "Learn the hidden structure behind every website on the internet.",
+          "concepts": [
+            "Tags <>",
+            "<html>",
+            "<body>"
+          ],
+          "example": "<html>\n  <body>Hello</body>\n</html>",
+          "content": [
+            {
+              "stepTitle": "The Invisible Frame",
+              "stepDetail": "HTML is like the steel frame of a skyscraper. You don't see it when the building is finished, but without it, the building collapses.",
+              "stepImage": "html_skeleton_visual"
+            },
+            {
+              "stepTitle": "Tags",
+              "stepDetail": "We speak to the browser using Tags. They look like `<tag>Content</tag>`. The first one opens the command, the second one (with the slash `/`) closes it."
+            }
+          ],
+          "quiz": {
+            "question": "Which symbol closes a tag?",
+            "options": [
+              "\\",
+              "/",
+              "*"
+            ],
+            "correctAnswer": "/",
+            "hint": "It leans forward, like in </h1>."
+          },
+          "consoleExercise": {
+            "prompt": "Write a body tag with the text 'Welcome'.",
+            "solution": "<body>Welcome</body>",
+            "successMessage": "Perfect! You just built the visible part of a webpage."
+          }
+        },
+        {
+          "id": "2",
+          "title": "2. Headlines (h1-h6)",
+          "overview": "Structure your content with titles and subtitles.",
+          "concepts": [
+            "<h1> to <h6>",
+            "Hierarchy"
+          ],
+          "example": "<h1>Breaking News</h1>\n<h2>Local Story</h2>",
+          "content": [
+            {
+              "stepTitle": "The Newspaper Analogy",
+              "stepDetail": "Newspapers have a big title (H1) and smaller section titles (H2, H3). HTML uses these tags to tell Google what is important.",
+              "stepImage": "heading_hierarchy_visual"
+            },
+            {
+              "stepTitle": "Size Matters",
+              "stepDetail": "`<h1>` is the Main Title (use only one). `<h6>` is the smallest subtitle."
+            }
+          ],
+          "quiz": {
+            "question": "Which heading is the most important?",
+            "options": [
+              "<h6>",
+              "<h3>",
+              "<h1>"
+            ],
+            "correctAnswer": "<h1>",
+            "hint": "Number 1 is always the top priority."
+          },
+          "consoleExercise": {
+            "prompt": "Create an h1 tag with the text 'My Portfolio'.",
+            "solution": "<h1>My Portfolio</h1>",
+            "successMessage": "Great! That will appear as big, bold text."
+          }
+        },
+        {
+          "id": "3",
+          "title": "3. Paragraphs (p)",
+          "overview": "Add blocks of text to your webpage.",
+          "concepts": [
+            "<p> Tag",
+            "Spacing"
+          ],
+          "example": "<p>This is a paragraph.</p>",
+          "content": [
+            {
+              "stepTitle": "Text Blocks",
+              "stepDetail": "You can't just type text loosely. You must wrap it in a `<p>` tag. This tells the browser 'This is a distinct block of text'."
+            },
+            {
+              "stepTitle": "Automatic Spacing",
+              "stepDetail": "Browsers automatically add a little empty space (margin) before and after every paragraph to make it readable."
+            }
+          ],
+          "quiz": {
+            "question": "What does 'p' stand for?",
+            "options": [
+              "Page",
+              "Paragraph",
+              "Print"
+            ],
+            "correctAnswer": "Paragraph",
+            "hint": "It's a block of text."
+          },
+          "consoleExercise": {
+            "prompt": "Write a paragraph that says 'About Me'.",
+            "solution": "<p>About Me</p>",
+            "successMessage": "Nice. Your text is now structured."
+          }
+        },
+        {
+          "id": "4",
+          "title": "4. Bold & Italics",
+          "overview": "Emphasize specific words for impact.",
+          "concepts": [
+            "<strong> vs <b>",
+            "<em> vs <i>"
+          ],
+          "example": "<strong>Urgent!</strong>",
+          "content": [
+            {
+              "stepTitle": "Visual vs Meaning",
+              "stepDetail": "`<b>` makes text bold, but `<strong>` tells screen readers the text is IMPORTANT."
+            },
+            {
+              "stepTitle": "Italicizing",
+              "stepDetail": "Similarly, `<i>` creates visual italics, while `<em>` adds semantic emphasis to the tone."
+            }
+          ],
+          "quiz": {
+            "question": "Which tag indicates importance?",
+            "options": [
+              "<b>",
+              "<bold>",
+              "<strong>"
+            ],
+            "correctAnswer": "<strong>",
+            "hint": "It adds strength to the meaning."
+          },
+          "consoleExercise": {
+            "prompt": "Make the word 'Warning' important using strong.",
+            "solution": "<strong>Warning</strong>",
+            "successMessage": "Strong work! Accessibility matters."
+          }
+        },
+        {
+          "id": "5",
+          "title": "5. Links (Anchor Tags)",
+          "overview": "Connect your page to the rest of the world.",
+          "concepts": [
+            "<a> Tag",
+            "href attribute"
+          ],
+          "example": "<a href='google.com'>Click Me</a>",
+          "content": [
+            {
+              "stepTitle": "The Magic Portal",
+              "stepDetail": "Links are the 'Web' in 'World Wide Web'. The `<a>` tag stands for Anchor. It anchors your page to another page."
+            },
+            {
+              "stepTitle": "The Address (href)",
+              "stepDetail": "The `href` attribute tells the browser where to go. Think of it as the destination address on an envelope."
+            }
+          ],
+          "quiz": {
+            "question": "Which attribute holds the URL?",
+            "options": [
+              "src",
+              "link",
+              "href"
+            ],
+            "correctAnswer": "href",
+            "hint": "It stands for Hypertext REFerence."
+          },
+          "consoleExercise": {
+            "prompt": "Create a link to 'site.com' with text 'Go'.",
+            "solution": "<a href='site.com'>Go</a>",
+            "successMessage": "You just built a bridge to another website!"
+          }
+        },
+        {
+          "id": "6",
+          "title": "6. Images (img)",
+          "overview": "Add visual content to your site.",
+          "concepts": [
+            "<img> Tag",
+            "src attribute",
+            "Self-Closing"
+          ],
+          "example": "<img src='cat.jpg' />",
+          "content": [
+            {
+              "stepTitle": "Self-Closing Tags",
+              "stepDetail": "Images don't wrap text, so they don't need a closing tag. They just sit there. We write them as `<img />`."
+            },
+            {
+              "stepTitle": "The Source (src)",
+              "stepDetail": "`src` tells the browser which file to load. If the filename is wrong, you get a broken icon.",
+              "stepImage": "img_tag_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Does <img> have a closing </img> tag?",
+            "options": [
+              "Yes",
+              "No",
+              "Sometimes"
+            ],
+            "correctAnswer": "No",
+            "hint": "It is a self-closing (void) element."
+          },
+          "consoleExercise": {
+            "prompt": "Add an image with source 'logo.png'.",
+            "solution": "<img src='logo.png' />",
+            "successMessage": "Looks good! Visuals make sites engaging."
+          }
+        },
+        {
+          "id": "7",
+          "title": "7. Lists (ul & ol)",
+          "overview": "Organize items into bullet points or numbered steps.",
+          "concepts": [
+            "<ul> (Unordered)",
+            "<ol> (Ordered)",
+            "<li> (List Item)"
+          ],
+          "example": "<ul>\n  <li>Milk</li>\n</ul>",
+          "content": [
+            {
+              "stepTitle": "The Grocery List",
+              "stepDetail": "Use `<ul>` (Unordered List) for bullet points where order doesn't matter (like groceries)."
+            },
+            {
+              "stepTitle": "The Recipe",
+              "stepDetail": "Use `<ol>` (Ordered List) for numbered steps where order matters (1. Mix, 2. Bake)."
+            }
+          ],
+          "quiz": {
+            "question": "Which tag creates a bulleted list?",
+            "options": [
+              "<ol>",
+              "<ul>",
+              "<list>"
+            ],
+            "correctAnswer": "<ul>",
+            "hint": "U stands for Unordered."
+          },
+          "consoleExercise": {
+            "prompt": "Create an unordered list with one item 'Apple'.",
+            "solution": "<ul><li>Apple</li></ul>",
+            "successMessage": "Organized! Lists are used everywhere."
+          }
+        },
+        {
+          "id": "8",
+          "title": "8. Attributes (ID & Class)",
+          "overview": "Give your elements unique names and group labels.",
+          "concepts": [
+            "id (Unique)",
+            "class (Group)"
+          ],
+          "example": "<div id='header' class='box'></div>",
+          "content": [
+            {
+              "stepTitle": "The Name Tag (ID)",
+              "stepDetail": "An `id` is unique. Only one element on the page can have `id='main-title'`. Use it for specific landmarks."
+            },
+            {
+              "stepTitle": "The Team Jersey (Class)",
+              "stepDetail": "A `class` is for groups. Many elements can have `class='button'`. They all join the 'button' team and look the same."
+            }
+          ],
+          "quiz": {
+            "question": "Can two elements share the same ID?",
+            "options": [
+              "Yes",
+              "No",
+              "Only divs"
+            ],
+            "correctAnswer": "No",
+            "hint": "IDs must be unique, like a passport number."
+          },
+          "consoleExercise": {
+            "prompt": "Create a div with the class 'container'.",
+            "solution": "<div class='container'></div>",
+            "successMessage": "Correct! Classes allow you to style many items at once."
+          }
+        },
+        {
+          "id": "9",
+          "title": "9. Containers (div & span)",
+          "overview": "Group elements together for layout and styling.",
+          "concepts": [
+            "<div> (Block)",
+            "<span> (Inline)"
+          ],
+          "example": "<div>\n  <span>Text</span>\n</div>",
+          "content": [
+            {
+              "stepTitle": "The Box (Div)",
+              "stepDetail": "`<div>` defines a Division. It's an empty box. We use it to group things together (like a sidebar or a card).",
+              "stepImage": "div_vs_span_visual"
+            },
+            {
+              "stepTitle": "The Highlighter (Span)",
+              "stepDetail": "`<span>` is used to grab a small piece of text inside a line, usually to color it or make it bold."
+            }
+          ],
+          "quiz": {
+            "question": "Which tag is best for grouping large sections?",
+            "options": [
+              "<span>",
+              "<div>",
+              "<a>"
+            ],
+            "correctAnswer": "<div>",
+            "hint": "It stands for Division."
+          },
+          "consoleExercise": {
+            "prompt": "Wrap the text 'Hello' inside a span.",
+            "solution": "<span>Hello</span>",
+            "successMessage": "Precision! Spans are great for styling specific words."
+          }
+        },
+        {
+          "id": "10",
+          "title": "10. Forms (Input)",
+          "overview": "Collect data from your users.",
+          "concepts": [
+            "<input>",
+            "type attribute",
+            "placeholder"
+          ],
+          "example": "<input type='text' placeholder='Name' />",
+          "content": [
+            {
+              "stepTitle": "Data Entry",
+              "stepDetail": "The `<input>` tag changes shape based on its `type`. It can be a text box, a checkbox, or a password field.",
+              "stepImage": "input_types_visual"
+            },
+            {
+              "stepTitle": "The Ghost Text",
+              "stepDetail": "`placeholder` is the grey text inside the box that gives the user a hint (e.g., 'Enter email here')."
+            }
+          ],
+          "quiz": {
+            "question": "How do you make a password field?",
+            "options": [
+              "type='secret'",
+              "type='password'",
+              "type='hide'"
+            ],
+            "correctAnswer": "type='password'",
+            "hint": "It hides the characters as dots."
+          },
+          "consoleExercise": {
+            "prompt": "Create an input with type 'email'.",
+            "solution": "<input type='email' />",
+            "successMessage": "User ready! This will open the email keyboard on phones."
+          }
+        },
+        {
+          "id": "11",
+          "title": "11. Advanced Input",
+          "overview": "Checkboxes, Radios, and Dropdowns.",
+          "concepts": [
+            "Checkbox",
+            "Radio Button",
+            "<select>"
+          ],
+          "example": "<input type='checkbox' /> Agree?",
+          "content": [
+            {
+              "stepTitle": "Choice",
+              "stepDetail": "Use `checkbox` for multiple options. Use `radio` for single choice (like Gender). Use `<select>` for a dropdown menu."
+            }
+          ],
+          "quiz": {
+            "question": "Which input allows multiple selections?",
+            "options": [
+              "Radio",
+              "Checkbox",
+              "Text"
+            ],
+            "correctAnswer": "Checkbox",
+            "hint": "You can check more than one box."
+          },
+          "consoleExercise": {
+            "prompt": "Create an input with type 'checkbox'.",
+            "solution": "<input type='checkbox' />",
+            "successMessage": "Interactive forms are powerful."
+          }
+        },
+        {
+          "id": "12",
+          "title": "12. Text Area & Labels",
+          "overview": "Collecting long messages and labeling inputs.",
+          "concepts": [
+            "<textarea>",
+            "<label>"
+          ],
+          "example": "<label>Bio:</label><textarea></textarea>",
+          "content": [
+            {
+              "stepTitle": "Big Text",
+              "stepDetail": "For comments or bios, use `<textarea>`. Unlike `<input>`, it has a closing tag."
+            },
+            {
+              "stepTitle": "Clickable Labels",
+              "stepDetail": "Wrapping text in a `<label>` makes it clickable, which helps focus the input box."
+            }
+          ],
+          "quiz": {
+            "question": "Which tag is best for a long comment?",
+            "options": [
+              "<input>",
+              "<text>",
+              "<textarea>"
+            ],
+            "correctAnswer": "<textarea>",
+            "hint": "It defines a multi-line area."
+          },
+          "consoleExercise": {
+            "prompt": "Create a textarea element.",
+            "solution": "<textarea></textarea>",
+            "successMessage": "Now users can write essays!"
+          }
+        },
+        {
+          "id": "13",
+          "title": "13. Tables",
+          "overview": "Display data in rows and columns.",
+          "concepts": [
+            "<table>",
+            "<tr> (Row)",
+            "<td> (Data)"
+          ],
+          "example": "<table><tr><td>Data</td></tr></table>",
+          "content": [
+            {
+              "stepTitle": "The Spreadsheet",
+              "stepDetail": "Tables are built row by row. First `<table>` opens the sheet. Then `<tr>` opens a Table Row."
+            },
+            {
+              "stepTitle": "The Cells",
+              "stepDetail": "Inside a row, we use `<td>` (Table Data) for the actual cell content.",
+              "stepImage": "table_structure_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What does <tr> stand for?",
+            "options": [
+              "Table Right",
+              "Table Row",
+              "Table Record"
+            ],
+            "correctAnswer": "Table Row",
+            "hint": "It creates a horizontal line of cells."
+          },
+          "consoleExercise": {
+            "prompt": "Create a row (tr) with one cell (td) saying 'Hi'.",
+            "solution": "<tr><td>Hi</td></tr>",
+            "successMessage": "You're thinking like a database now."
+          }
+        },
+        {
+          "id": "14",
+          "title": "14. Buttons & Actions",
+          "overview": "Make clickable elements to submit forms or trigger scripts.",
+          "concepts": [
+            "<button>",
+            "Click events"
+          ],
+          "example": "<button>Submit</button>",
+          "content": [
+            {
+              "stepTitle": "The Call to Action",
+              "stepDetail": "Buttons are the main way users say 'Go'. They can submit forms or run JavaScript code."
+            },
+            {
+              "stepTitle": "Button vs Link",
+              "stepDetail": "Use Links (`<a>`) to go to a new page. Use Buttons (`<button>`) to perform an action on the *current* page."
+            }
+          ],
+          "quiz": {
+            "question": "When should you use a <button>?",
+            "options": [
+              "To go to Google",
+              "To submit a form",
+              "To display an image"
+            ],
+            "correctAnswer": "To submit a form",
+            "hint": "Links go places; Buttons do things."
+          },
+          "consoleExercise": {
+            "prompt": "Create a button with text 'Login'.",
+            "solution": "<button>Login</button>",
+            "successMessage": "Clickable! This is essential for interactivity."
+          }
+        },
+        {
+          "id": "15",
+          "title": "15. Semantic HTML",
+          "overview": "Write meaningful code that machines can understand.",
+          "concepts": [
+            "<header>",
+            "<footer>",
+            "<main>"
+          ],
+          "example": "<header>Logo</header>",
+          "content": [
+            {
+              "stepTitle": "Meaningful Tags",
+              "stepDetail": "Instead of using `<div>` for everything, use specific tags. Use `<header>` for the top, `<footer>` for the bottom.",
+              "stepImage": "semantic_layout_visual"
+            },
+            {
+              "stepTitle": "Why?",
+              "stepDetail": "It helps Screen Readers (for blind users) navigate your site and helps Google understand your content structure."
+            }
+          ],
+          "quiz": {
+            "question": "Where should copyright info go?",
+            "options": [
+              "<header>",
+              "<main>",
+              "<footer>"
+            ],
+            "correctAnswer": "<footer>",
+            "hint": "It belongs at the bottom of the page."
+          },
+          "consoleExercise": {
+            "prompt": "Create a footer tag containing 'Copyright'.",
+            "solution": "<footer>Copyright</footer>",
+            "successMessage": "Professional touch! Semantics matter for accessibility."
+          }
+        },
+        {
+          "id": "16",
+          "title": "16. Multimedia",
+          "overview": "Embed sound and video directly into your page.",
+          "concepts": [
+            "<video>",
+            "<audio>",
+            "controls"
+          ],
+          "example": "<video src='movie.mp4' controls />",
+          "content": [
+            {
+              "stepTitle": "Native Media",
+              "stepDetail": "HTML5 allows you to play files without plugins. Just point the `src` to your file."
+            },
+            {
+              "stepTitle": "The Controls",
+              "stepDetail": "Don't forget the `controls` attribute! Without it, the user can't play, pause, or change volume."
+            }
+          ],
+          "quiz": {
+            "question": "What attribute adds the play/pause buttons?",
+            "options": [
+              "play",
+              "buttons",
+              "controls"
+            ],
+            "correctAnswer": "controls",
+            "hint": "It gives the user control."
+          },
+          "consoleExercise": {
+            "prompt": "Add an audio tag with 'controls'.",
+            "solution": "<audio controls></audio>",
+            "successMessage": "Sound check passed!"
+          }
+        },
+        {
+          "id": "17",
+          "title": "17. Metadata (Head)",
+          "overview": "Information about your page that users don't see.",
+          "concepts": [
+            "<head>",
+            "<title>",
+            "<meta>"
+          ],
+          "example": "<head><title>My Site</title></head>",
+          "content": [
+            {
+              "stepTitle": "The Brain (<head>)",
+              "stepDetail": "The `<body>` is what users see. The `<head>` is what Google and the Browser see. It holds settings."
+            },
+            {
+              "stepTitle": "The Tab Name",
+              "stepDetail": "The `<title>` tag sets the name you see on the browser tab or in search results."
+            }
+          ],
+          "quiz": {
+            "question": "Where does the <title> tag go?",
+            "options": [
+              "Inside <body>",
+              "Inside <head>",
+              "After </html>"
+            ],
+            "correctAnswer": "Inside <head>",
+            "hint": "It's meta-information, not visible content."
+          },
+          "consoleExercise": {
+            "prompt": "Set the title to 'Home'.",
+            "solution": "<title>Home</title>",
+            "successMessage": "Correct! That's what shows up in Google Search."
+          }
+        },
+        {
+          "id": "18",
+          "title": "18. SEO Basics",
+          "overview": "Helping Google find your website.",
+          "concepts": [
+            "Meta Description",
+            "Keywords",
+            "Alt Text"
+          ],
+          "example": "<meta name='description' content='...' />",
+          "content": [
+            {
+              "stepTitle": "Search Engine Optimization",
+              "stepDetail": "SEO is how you rank higher on Google. The `description` meta tag is the snippet of text people see under your link in search results."
+            }
+          ],
+          "quiz": {
+            "question": "Where is the meta description placed?",
+            "options": [
+              "In the <head>",
+              "In the <body>",
+              "In the <footer>"
+            ],
+            "correctAnswer": "In the <head>",
+            "hint": "It is hidden metadata."
+          },
+          "consoleExercise": {
+            "prompt": "Write a meta tag with name='description'.",
+            "solution": "<meta name='description' />",
+            "successMessage": "You're now visible to search engines!"
+          }
+        },
+        {
+          "id": "19",
+          "title": "19. Favicons & Icons",
+          "overview": "Adding the tiny icon to the browser tab.",
+          "concepts": [
+            "<link>",
+            "rel='icon'"
+          ],
+          "example": "<link rel='icon' href='icon.png'>",
+          "content": [
+            {
+              "stepTitle": "The Tab Icon",
+              "stepDetail": "A Favicon is the tiny logo in the browser tab. We use the `<link>` tag inside the head to set it."
+            }
+          ],
+          "quiz": {
+            "question": "What is the relationship (rel) for a favicon?",
+            "options": [
+              "rel='logo'",
+              "rel='icon'",
+              "rel='image'"
+            ],
+            "correctAnswer": "rel='icon'",
+            "hint": "It stands for Icon."
+          },
+          "consoleExercise": {
+            "prompt": "Link an icon with href='logo.ico'.",
+            "solution": "<link rel='icon' href='logo.ico'>",
+            "successMessage": "Polished! Your site looks professional."
+          }
+        },
+        {
+          "id": "20",
+          "title": "20. Project: Portfolio",
+          "overview": "Combine everything to build a personal profile structure.",
+          "concepts": [
+            "Structure",
+            "Nesting",
+            "Final Exam"
+          ],
+          "example": "",
+          "content": [
+            {
+              "stepTitle": "The Blueprint",
+              "stepDetail": "You need a Header (Name), Main (About text + Image), and Footer (Contact Link).",
+              "stepImage": "semantic_layout_visual"
+            },
+            {
+              "stepTitle": "Nesting",
+              "stepDetail": "Remember: Tags go inside tags. The `<img>` goes inside the `<main>`, which goes inside the `<body>`."
+            }
+          ],
+          "quiz": {
+            "question": "Which tag holds all the visible content?",
+            "options": [
+              "<head>",
+              "<html>",
+              "<body>"
+            ],
+            "correctAnswer": "<body>",
+            "hint": "It's the body of the document."
+          },
+          "consoleExercise": {
+            "prompt": "Create a main tag containing an h1 'Profile'.",
+            "solution": "<main><h1>Profile</h1></main>",
+            "successMessage": "Congratulations! You are now an HTML Architect."
+          }
+        }
+      ]
+    }
+  ]
+}

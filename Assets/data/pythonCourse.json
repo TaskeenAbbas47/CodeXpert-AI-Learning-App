@@ -1,0 +1,656 @@
+{
+  "id": "python_linear_mastery",
+  "title": "Python: Basics to Machine Learning",
+  "sections": [
+    {
+      "id": "main_track",
+      "title": "Part 1: Python Foundation",
+      "lessons": [
+        {
+          "id": "1",
+          "title": "1. Your First Code",
+          "overview": "Start here. Learn how to speak to the computer using the Console.",
+          "concepts": ["The Console", "print()"],
+          "example": "print('Hello World')",
+          "content": [
+            {
+              "stepTitle": "The Output Screen",
+              "stepDetail": "The Console is the black box where the computer talks back to you. We use code to make text appear there.",
+              "stepImage": "python_console_visual"
+            },
+            {
+              "stepTitle": "The Print Command",
+              "stepDetail": "Type `print('message')`. This command tells Python to display whatever text you put inside the quotes."
+            }
+          ],
+          "quiz": {
+            "question": "Which command displays text on the screen?",
+            "options": ["echo()", "print()", "log()"],
+            "correctAnswer": "print()",
+            "hint": "It prints to the screen."
+          },
+          "consoleExercise": {
+            "prompt": "Print the word: Python",
+            "solution": "print('Python')",
+            "successMessage": "Perfect! You just wrote your first line of code."
+          }
+        },
+        {
+          "id": "2",
+          "title": "2. Saving Data (Variables)",
+          "overview": "Computers have memory. Learn how to save information for later.",
+          "concepts": ["Variables", "Assignment (=)"],
+          "example": "score = 100",
+          "content": [
+            {
+              "stepTitle": "The Box Analogy",
+              "stepDetail": "Variables are like labeled boxes. `score = 10` creates a box named 'score' and puts the number 10 inside.",
+              "stepImage": "python_variables_visual"
+            },
+            {
+              "stepTitle": "Retrieving Data",
+              "stepDetail": "To use the data, just type the name (`score`). The computer opens the box and gives you the value."
+            }
+          ],
+          "quiz": {
+            "question": "How do you save 20 into a variable named 'age'?",
+            "options": ["age : 20", "20 = age", "age = 20"],
+            "correctAnswer": "age = 20",
+            "hint": "Label on left, value on right."
+          },
+          "consoleExercise": {
+            "prompt": "Create a variable 'house' and assign it the value 67.",
+            "solution": "house = 67",
+            "successMessage": "Data saved successfully."
+          }
+        },
+        {
+          "id": "3",
+          "title": "3. Text & Numbers (Types)",
+          "overview": "Learn the difference between words (Strings) and math (Integers).",
+          "concepts": ["Strings", "Integers", "Floats"],
+          "example": "name = 'Ali'",
+          "content": [
+            {
+              "stepTitle": "Text (Strings)",
+              "stepDetail": "Words are called Strings. They must be inside quotes: `'Hello'`. You cannot do math with them."
+            },
+            {
+              "stepTitle": "Numbers",
+              "stepDetail": "Integers are whole numbers (5). Floats are decimals (5.5). Computers handle them differently."
+            }
+          ],
+          "quiz": {
+            "question": "Which of these is a String?",
+            "options": ["25", "'25'", "25.0"],
+            "correctAnswer": "'25'",
+            "hint": "Look for the quotes."
+          },
+          "consoleExercise": {
+            "prompt": "Create a variable 'city' and set it to 'London'.",
+            "solution": "city = 'London'",
+            "successMessage": "String captured."
+          }
+        },
+        {
+          "id": "4",
+          "title": "4. Talking to Users (Input)",
+          "overview": "Make your app interactive by asking questions.",
+          "concepts": ["input()", "Saving Input"],
+          "example": "name = input('Name?')",
+          "content": [
+            {
+              "stepTitle": "Asking Questions",
+              "stepDetail": "`input()` pauses the program and waits for the user to type. Always save the result into a variable!"
+            }
+          ],
+          "quiz": {
+            "question": "What happens if you don't assign input() to a variable?",
+            "options": ["It crashes", "The data is lost", "It prints it"],
+            "correctAnswer": "The data is lost",
+            "hint": "You need a box to catch the answer."
+          },
+          "consoleExercise": {
+            "prompt": "Ask for input and save it to a variable named 'user'.",
+            "solution": "user = input()",
+            "successMessage": "Interactive mode engaged."
+          }
+        },
+        {
+          "id": "5",
+          "title": "5. True or False (Logic)",
+          "overview": "Understand the simple Yes/No logic.",
+          "concepts": ["Booleans", "Comparisons"],
+          "example": "print(10 > 5)",
+          "content": [
+            {
+              "stepTitle": "The Switch",
+              "stepDetail": "A Boolean is either `True` or `False`. It's the basis of all computer decision making."
+            }
+          ],
+          "quiz": {
+            "question": "What is the result of: 5 == 10?",
+            "options": ["True", "False", "Error"],
+            "correctAnswer": "False",
+            "hint": "5 is not equal to 10."
+          },
+          "consoleExercise": {
+            "prompt": "Print the result of checking if 20 is greater than 10.",
+            "solution": "print(20 > 10)",
+            "successMessage": "Logic verified."
+          }
+        },
+        {
+          "id": "6",
+          "title": "6. Making Decisions (If/Else)",
+          "overview": "Write intelligent code that changes behavior.",
+          "concepts": ["if", "else", "Indentation"],
+          "example": "if x > 5:\n  print('Big')",
+          "content": [
+            {
+              "stepTitle": "The Fork",
+              "stepDetail": "An `if` statement checks a condition. If True, it runs the indented code blocks.",
+              "stepImage": "python_logic_visual"
+            },
+            {
+              "stepTitle": "Indentation",
+              "stepDetail": "Python is strict! You MUST indent (press tab) the code inside the `if` statement."
+            }
+          ],
+          "quiz": {
+            "question": "What determines which code belongs to the 'if'?",
+            "options": ["Brackets {}", "Indentation", "Semicolons"],
+            "correctAnswer": "Indentation",
+            "hint": "The spacing at the start of the line."
+          },
+          "consoleExercise": {
+            "prompt": "If 10 is greater than 5, print 'Yes'.",
+            "solution": "if 10 > 5:\n  print('Yes')",
+            "successMessage": "Decision logic active."
+          }
+        },
+        {
+          "id": "7",
+          "title": "7. Lists (Collections)",
+          "overview": "Store multiple items in one variable.",
+          "concepts": ["Lists []", "Index"],
+          "example": "cart = ['Apple', 'Milk']",
+          "content": [
+            {
+              "stepTitle": "The Shelf",
+              "stepDetail": "Lists use square brackets `[]`. They keep items in a specific order.",
+              "stepImage": "python_lists_visual"
+            },
+            {
+              "stepTitle": "Zero Indexing",
+              "stepDetail": "Computers count from 0. `cart[0]` gets the first item."
+            }
+          ],
+          "quiz": {
+            "question": "How do you access the first item of a list?",
+            "options": ["list[1]", "list[0]", "list(1)"],
+            "correctAnswer": "list[0]",
+            "hint": "Start at zero."
+          },
+          "consoleExercise": {
+            "prompt": "Create a list named 'nums' with the numbers 1 and 2.",
+            "solution": "nums = [1, 2]",
+            "successMessage": "List created."
+          }
+        },
+        {
+          "id": "8",
+          "title": "8. For Loops",
+          "overview": "Process every item in a list automatically.",
+          "concepts": ["for", "in"],
+          "example": "for x in items:\n  print(x)",
+          "content": [
+            {
+              "stepTitle": "The Robot Arm",
+              "stepDetail": "A `for` loop goes through a list one by one. It assigns the current item to a variable (like `x`) so you can use it.",
+              "stepImage": "python_loops_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What does a for loop do?",
+            "options": ["Runs once", "Runs for each item", "Runs forever"],
+            "correctAnswer": "Runs for each item",
+            "hint": "It iterates through the collection."
+          },
+          "consoleExercise": {
+            "prompt": "Loop through list [1, 2] and print each item 'i'.",
+            "solution": "for i in [1, 2]:\n  print(i)",
+            "successMessage": "Automation achieved."
+          }
+        },
+        {
+          "id": "9",
+          "title": "9. While Loops",
+          "overview": "Keep code running as long as a condition is true.",
+          "concepts": ["while", "Infinite Loops"],
+          "example": "while x > 0:\n  x = x - 1",
+          "content": [
+            {
+              "stepTitle": "The Continuous Check",
+              "stepDetail": "`while` loops check the condition before every run. Make sure the condition eventually becomes False, or it runs forever!"
+            }
+          ],
+          "quiz": {
+            "question": "What happens if the condition never becomes False?",
+            "options": ["It stops", "Infinite Loop", "It breaks"],
+            "correctAnswer": "Infinite Loop",
+            "hint": "It never stops running."
+          },
+          "consoleExercise": {
+            "prompt": "Write a loop: while x is greater than 0, print x. (Assume x=5)",
+            "solution": "while x > 0:\n  print(x)\n  x = x - 1",
+            "successMessage": "Loop controlled."
+          }
+        },
+        {
+          "id": "10",
+          "title": "10. Dictionaries",
+          "overview": "Store complex data using labeled keys.",
+          "concepts": ["Dicts {}", "Key-Value"],
+          "example": "user = {'name': 'Ali'}",
+          "content": [
+            {
+              "stepTitle": "Key-Value Pairs",
+              "stepDetail": "Dictionaries use curly braces `{}`. Instead of numbers, you use labels (Keys) to find data."
+            }
+          ],
+          "quiz": {
+            "question": "Which symbol creates a Dictionary?",
+            "options": ["[]", "()", "{}"],
+            "correctAnswer": "{}",
+            "hint": "Curly braces."
+          },
+          "consoleExercise": {
+            "prompt": "Create a dict named 'car' with key 'color' set to 'Red'.",
+            "solution": "car = {'color': 'Red'}",
+            "successMessage": "Data mapped."
+          }
+        },
+        {
+          "id": "11",
+          "title": "11. Functions",
+          "overview": "Create reusable tools.",
+          "concepts": ["def", "Call"],
+          "example": "def say():\n  print('Hi')",
+          "content": [
+            {
+              "stepTitle": "Defining",
+              "stepDetail": "Use `def` to create a function. It's like writing a recipe. It doesn't cook anything until you call it.",
+              "stepImage": "python_functions_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Which keyword starts a function?",
+            "options": ["func", "def", "fun"],
+            "correctAnswer": "def",
+            "hint": "Define."
+          },
+          "consoleExercise": {
+            "prompt": "Define a function 'hello' that prints 'Hi'.",
+            "solution": "def hello():\n  print('Hi')",
+            "successMessage": "Function defined."
+          }
+        },
+        {
+          "id": "12",
+          "title": "12. Return Values",
+          "overview": "Getting data back from functions.",
+          "concepts": ["return", "Output"],
+          "example": "def add(a, b):\n  return a + b",
+          "content": [
+            {
+              "stepTitle": "Sending Back",
+              "stepDetail": "`print` shows text. `return` gives data back to the code so it can be saved in a variable."
+            }
+          ],
+          "quiz": {
+            "question": "If a function prints data but has no return, what is its value?",
+            "options": ["0", "None", "False"],
+            "correctAnswer": "None",
+            "hint": "It returns nothing."
+          },
+          "consoleExercise": {
+            "prompt": "Write a function 'get5' that returns 5.",
+            "solution": "def get5():\n  return 5",
+            "successMessage": "Value returned."
+          }
+        },
+        {
+          "id": "13",
+          "title": "13. Error Handling",
+          "overview": "Catching crashes before they happen.",
+          "concepts": ["try", "except"],
+          "example": "try:\n  x = 1/0\nexcept:\n  print('Error')",
+          "content": [
+            {
+              "stepTitle": "Safety Net",
+              "stepDetail": "Wrap risky code in `try`. If it crashes, Python jumps to `except` instead of stopping the whole program.",
+              "stepImage": "python_error_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Which block runs if an error occurs?",
+            "options": ["try", "catch", "except"],
+            "correctAnswer": "except",
+            "hint": "It handles the exception."
+          },
+          "consoleExercise": {
+            "prompt": "Wrap 'x=1/0' in a try/except block.",
+            "solution": "try:\n  x=1/0\nexcept:\n  print('No')",
+            "successMessage": "Crash averted."
+          }
+        },
+        {
+          "id": "14",
+          "title": "14. Classes (OOP)",
+          "overview": "Blueprints for creating objects.",
+          "concepts": ["class", "Object"],
+          "example": "class Car:\n  color = 'Red'",
+          "content": [
+            {
+              "stepTitle": "The Blueprint",
+              "stepDetail": "A Class is a design. Objects are the things built from that design. You can make infinite Objects from one Class.",
+              "stepImage": "python_classes_visual"
+            }
+          ],
+          "quiz": {
+            "question": "A Class is like a...",
+            "options": ["House", "Blueprint", "Variable"],
+            "correctAnswer": "Blueprint",
+            "hint": "It describes how to build something."
+          },
+          "consoleExercise": {
+            "prompt": "Define a class named 'Bot' with variable name='X'.",
+            "solution": "class Bot:\n  name='X'",
+            "successMessage": "Blueprint ready."
+          }
+        },
+        {
+          "id": "15",
+          "title": "15. Modules (Imports)",
+          "overview": "Using code written by others.",
+          "concepts": ["import", "Libraries"],
+          "example": "import math\nprint(math.pi)",
+          "content": [
+            {
+              "stepTitle": "Superpowers",
+              "stepDetail": "Python comes with 'batteries included'. Use `import` to load modules like `math` or `random` to gain extra powers.",
+              "stepImage": "python_imports_visual"
+            }
+          ],
+          "quiz": {
+            "question": "How do you load the math module?",
+            "options": ["load math", "import math", "use math"],
+            "correctAnswer": "import math",
+            "hint": "Import it."
+          },
+          "consoleExercise": {
+            "prompt": "Import the random module.",
+            "solution": "import random",
+            "successMessage": "Library loaded."
+          }
+        },
+        {
+          "id": "16",
+          "title": "16. Randomness",
+          "overview": "Making games unpredictable.",
+          "concepts": ["random.randint", "Chaos"],
+          "example": "import random\nn = random.randint(1, 10)",
+          "content": [
+            {
+              "stepTitle": "Rolling Dice",
+              "stepDetail": "`random.randint(a, b)` picks a random number between a and b. Essential for games and simulations."
+            }
+          ],
+          "quiz": {
+            "question": "Which function gives a random integer?",
+            "options": ["rand()", "randint()", "random()"],
+            "correctAnswer": "randint()",
+            "hint": "Random Integer."
+          },
+          "consoleExercise": {
+            "prompt": "Import random and pick a number between 1 and 5.",
+            "solution": "import random\nx = random.randint(1, 5)",
+            "successMessage": "Number generated."
+          }
+        },
+        {
+          "id": "17",
+          "title": "17. List Comprehension",
+          "overview": "The Pythonic way to create lists.",
+          "concepts": ["Shortcuts", "Syntax"],
+          "example": "[x for x in range(10)]",
+          "content": [
+            {
+              "stepTitle": "One-Liners",
+              "stepDetail": "Instead of writing 3 lines for a loop, you can condense it into one line inside brackets `[]`. This is very professional."
+            }
+          ],
+          "quiz": {
+            "question": "What is '[x*2 for x in nums]'?",
+            "options": ["A Loop", "A List Comprehension", "A Dictionary"],
+            "correctAnswer": "A List Comprehension",
+            "hint": "It comprehends the list in one line."
+          },
+          "consoleExercise": {
+            "prompt": "Create a list of numbers 0-4 using comprehension.",
+            "solution": "[x for x in range(5)]",
+            "successMessage": "Very Pythonic!"
+          }
+        },
+        {
+          "id": "18",
+          "title": "18. File I/O",
+          "overview": "Reading and writing files on the computer.",
+          "concepts": ["open()", "read()", "write()"],
+          "example": "f = open('data.txt', 'w')",
+          "content": [
+            {
+              "stepTitle": "Opening Files",
+              "stepDetail": "Use `open('filename', 'mode')`. Modes: `'r'` for read, `'w'` for write. Always close the file when done!"
+            }
+          ],
+          "quiz": {
+            "question": "Which mode is for writing?",
+            "options": ["'r'", "'x'", "'w'"],
+            "correctAnswer": "'w'",
+            "hint": "Write starts with W."
+          },
+          "consoleExercise": {
+            "prompt": "Open 'log.txt' in write mode.",
+            "solution": "f = open('log.txt', 'w')",
+            "successMessage": "File access granted."
+          }
+        },
+        {
+          "id": "19",
+          "title": "19. F-Strings",
+          "overview": "Formatting text easily.",
+          "concepts": ["f''", "Interpolation"],
+          "example": "print(f'Hello {name}')",
+          "content": [
+            {
+              "stepTitle": "The Magic F",
+              "stepDetail": "Put an `f` before the quotes. Now you can put variables directly inside curly braces `{}` within the text."
+            }
+          ],
+          "quiz": {
+            "question": "How do you insert a variable 'x' into an f-string?",
+            "options": ["(x)", "{x}", "[x]"],
+            "correctAnswer": "{x}",
+            "hint": "Curly braces."
+          },
+          "consoleExercise": {
+            "prompt": "Use an f-string to print variable 'score'.",
+            "solution": "print(f'Score: {score}')",
+            "successMessage": "Clean and readable."
+          }
+        },
+        {
+          "id": "20",
+          "title": "20. Project: ATM",
+          "overview": "Combine everything into a banking system.",
+          "concepts": ["Capstone", "Logic"],
+          "example": "# Full System",
+          "content": [
+            {
+              "stepTitle": "The Goal",
+              "stepDetail": "Build an ATM. Use `while` for the main loop, `input` for commands, `if/else` for logic, and `variables` for the balance."
+            }
+          ],
+          "quiz": {
+            "question": "What keeps the ATM running?",
+            "options": ["A List", "A While Loop", "A Class"],
+            "correctAnswer": "A While Loop",
+            "hint": "It runs until you quit."
+          },
+          "consoleExercise": {
+            "prompt": "Start the loop: while True:",
+            "solution": "while True:\n  pass",
+            "successMessage": "You are a Python Master!"
+          }
+        }
+      ]
+    },
+    {
+      "id": "ml_track",
+      "title": "Part 2: Intro to Machine Learning",
+      "lessons": [
+        {
+          "id": "21",
+          "title": "21. What is ML?",
+          "overview": "Teaching computers to learn from data instead of being programmed.",
+          "concepts": ["Data", "Patterns", "Prediction"],
+          "example": "# No code, just concept",
+          "content": [
+            {
+              "stepTitle": "Traditional vs ML",
+              "stepDetail": "Traditional: You write rules (if x > 5). ML: You give data, computer figures out the rules.",
+              "stepImage": "ml_concept_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What does ML learn from?",
+            "options": ["Rules", "Data", "Magic"],
+            "correctAnswer": "Data",
+            "hint": "It needs examples."
+          },
+          "consoleExercise": {
+            "prompt": "Create a variable 'data' and set it to 'Images'.",
+            "solution": "data = 'Images'",
+            "successMessage": "Data is the fuel for ML."
+          }
+        },
+        {
+          "id": "22",
+          "title": "22. NumPy (The Matrix)",
+          "overview": "Super-fast lists for math. The foundation of all ML.",
+          "concepts": ["numpy", "array", "Shape"],
+          "example": "import numpy as np\narr = np.array([1, 2])",
+          "content": [
+            {
+              "stepTitle": "Super Lists",
+              "stepDetail": "Python lists are slow. NumPy arrays are incredibly fast and can do math on whole lists at once.",
+              "stepImage": "ml_numpy_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Standard alias for numpy?",
+            "options": ["num", "np", "py"],
+            "correctAnswer": "np",
+            "hint": "Short for Num-Py."
+          },
+          "consoleExercise": {
+            "prompt": "Import numpy as np",
+            "solution": "import numpy as np",
+            "successMessage": "Power unlocked."
+          }
+        },
+        {
+          "id": "23",
+          "title": "23. Pandas (Excel for Python)",
+          "overview": "Handling tables of data (DataFrames).",
+          "concepts": ["pandas", "DataFrame", "Rows/Cols"],
+          "example": "import pandas as pd\ndf = pd.DataFrame(data)",
+          "content": [
+            {
+              "stepTitle": "The DataFrame",
+              "stepDetail": "Think of a DataFrame as a programmable Excel sheet. It has rows, columns, and headers.",
+              "stepImage": "ml_pandas_visual"
+            }
+          ],
+          "quiz": {
+            "question": "What is a Pandas table called?",
+            "options": ["List", "Sheet", "DataFrame"],
+            "correctAnswer": "DataFrame",
+            "hint": "A frame of data."
+          },
+          "consoleExercise": {
+            "prompt": "Import pandas as pd",
+            "solution": "import pandas as pd",
+            "successMessage": "Data analyst mode on."
+          }
+        },
+        {
+          "id": "24",
+          "title": "24. Seeing Data (Matplotlib)",
+          "overview": "Drawing graphs to understand patterns.",
+          "concepts": ["matplotlib", "plot", "show"],
+          "example": "plt.plot([1, 2, 3])",
+          "content": [
+            {
+              "stepTitle": "Visualizing",
+              "stepDetail": "You can't spot patterns in 10,000 numbers. But a line chart makes it obvious instantly.",
+              "stepImage": "ml_plot_visual"
+            }
+          ],
+          "quiz": {
+            "question": "Which function draws a line?",
+            "options": ["draw()", "line()", "plot()"],
+            "correctAnswer": "plot()",
+            "hint": "Plotting a graph."
+          },
+          "consoleExercise": {
+            "prompt": "Import matplotlib.pyplot as plt",
+            "solution": "import matplotlib.pyplot as plt",
+            "successMessage": "Ready to draw."
+          }
+        },
+        {
+          "id": "25",
+          "title": "25. Simple Prediction",
+          "overview": "The concept of Linear Regression (fitting a line).",
+          "concepts": ["Model", "Fit", "Predict"],
+          "example": "model.fit(X, y)",
+          "content": [
+            {
+              "stepTitle": "Training",
+              "stepDetail": "We give the model inputs (X) and answers (y). It 'fits' a line through them to learn the pattern.",
+              "stepImage": "ml_linear_visual"
+            },
+            {
+              "stepTitle": "Predicting",
+              "stepDetail": "Once trained, we give it new X, and it guesses y."
+            }
+          ],
+          "quiz": {
+            "question": "Which step teaches the model?",
+            "options": ["predict()", "fit()", "init()"],
+            "correctAnswer": "fit()",
+            "hint": "It fits the data."
+          },
+          "consoleExercise": {
+            "prompt": "Create a variable 'prediction' and set it to 0.",
+            "solution": "prediction = 0",
+            "successMessage": "You've finished the Python & ML Intro!"
+          }
+        }
+      ]
+    }
+  ]
+}

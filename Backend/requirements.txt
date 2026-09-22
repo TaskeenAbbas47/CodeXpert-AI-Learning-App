@@ -1,0 +1,19 @@
+fastapi
+uvicorn
+pydantic
+python-dotenv
+openai
+langchain
+langchain-core
+langchain-community
+langchain-classic
+langchain-text-splitters
+langchain-openai
+langchain-chroma
+pinecone-client
+langchain-pinecone
+pypdf
+# Force pre-compiled binary versions for Render
+chromadb==0.5.23
+tokenizers==0.19.1
+numpy==1.26.4
