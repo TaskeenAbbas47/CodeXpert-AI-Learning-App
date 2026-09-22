@@ -1,97 +1,199 @@
-This is a new [**React Native**](https://reactnative.dev) project, bootstrapped using [`@react-native-community/cli`](https://github.com/react-native-community/cli).
+<div align="center">
 
-# Getting Started
+# 🚀 CodeXpert
 
-> **Note**: Make sure you have completed the [Set Up Your Environment](https://reactnative.dev/docs/set-up-your-environment) guide before proceeding.
+### AI-Powered Coding Learning Platform
 
-## Step 1: Start Metro
+<img src="https://readme-typing-svg.demolab.com?font=Poppins&weight=600&size=26&pause=1000&color=36BCF7&center=true&vCenter=true&width=700&lines=Learn+Programming+with+AI;Guided+Hints+Instead+of+Full+Solutions;Built+with+React+Native+%2B+FastAPI+%2B+OpenAI;Final+Year+Project+at+COMSATS+University" alt="Typing SVG" />
 
-First, you will need to run **Metro**, the JavaScript build tool for React Native.
+<br>
 
-To start the Metro dev server, run the following command from the root of your React Native project:
+![React Native](https://img.shields.io/badge/React%20Native-Mobile%20App-blue?style=for-the-badge)
+![FastAPI](https://img.shields.io/badge/FastAPI-Backend-green?style=for-the-badge)
+![OpenAI](https://img.shields.io/badge/OpenAI-AI%20Powered-black?style=for-the-badge)
+![Firestore](https://img.shields.io/badge/Firestore-Database-orange?style=for-the-badge)
 
-```sh
-# Using npm
-npm start
+</div>
 
-# OR using Yarn
-yarn start
+---
+
+## 📖 About CodeXpert
+
+CodeXpert is an AI-powered learning platform designed to help students improve their programming skills through guided learning, intelligent hints, and personalized explanations.
+
+Unlike traditional AI coding assistants that provide complete solutions, CodeXpert encourages critical thinking by helping users understand concepts and solve problems independently.
+
+This project was developed as a **Final Year Project (FYP)** for the **BS Software Engineering Program at COMSATS University Islamabad, Attock Campus.**
+
+---
+
+## ✨ Key Features
+
+### 🤖 XpertAI Assistant
+
+* Intelligent coding guidance
+* Context-aware explanations
+* Learning-focused responses
+* Interactive AI conversations
+* Problem-solving assistance
+
+### 💻 Programming Support
+
+* Python
+* JavaScript
+* HTML
+* CSS
+
+### 📱 User Features
+
+* Secure Authentication
+* Interactive Dashboard
+* AI Chatbot
+* Leaderboard
+* Profile Management
+* Learning Progress Tracking
+
+---
+
+## 🏗️ System Architecture
+
+```text
+User
+ │
+ ▼
+React Native Mobile App
+ │
+ ▼
+FastAPI Backend
+ │
+ ├── Firestore Database
+ │
+ ├── ChromaDB Vector Store
+ │
+ └── OpenAI Models
 ```
 
-## Step 2: Build and run your app
+---
 
-With Metro running, open a new terminal window/pane from the root of your React Native project, and use one of the following commands to build and run your Android or iOS app:
+## ⚙️ Technology Stack
 
-### Android
+| Layer           | Technology   |
+| --------------- | ------------ |
+| Mobile App      | React Native |
+| Backend         | FastAPI      |
+| Database        | Firestore    |
+| AI Models       | OpenAI       |
+| Vector Database | ChromaDB     |
+| APIs            | REST APIs    |
+| Authentication  | Firebase     |
 
-```sh
-# Using npm
-npm run android
+---
 
-# OR using Yarn
-yarn android
+## 🔄 How It Works
+
+```text
+Student Question
+        │
+        ▼
+Knowledge Retrieval
+        │
+        ▼
+RAG Pipeline
+        │
+        ▼
+XpertAI Processing
+        │
+        ▼
+Helpful Hint / Explanation
+        │
+        ▼
+Improved Learning Experience
 ```
 
-### iOS
+---
 
-For iOS, remember to install CocoaPods dependencies (this only needs to be run on first clone or after updating native deps).
+## 📸 Application Screenshots
 
-The first time you create a new project, run the Ruby bundler to install CocoaPods itself:
+### 🔐 Authentication
 
-```sh
-bundle install
+[Login Screen](App%20screenshots/Signup.jpeg)
+
+### 🏠 Dashboard
+
+[Dashboard](App%20screenshots\Dasboard.jpeg)
+
+### 🤖 XpertAI Assistant
+
+[Chatbot](App%20screenshots\Assistant.jpeg)
+
+### 🏆 Leaderboard
+
+[Leaderboard](App%20screenshots\Leaderboard.jpeg)
+
+### 👤 Profile
+
+[Profile](App%20screenshots\Profile.jpeg)
+
+---
+
+## 🎯 Project Objectives
+
+* Improve programming education through AI
+* Encourage critical thinking
+* Promote guided learning
+* Reduce dependency on copy-paste solutions
+* Create an engaging learning environment
+
+---
+
+## 🚀 Future Enhancements
+
+* Voice-based AI Assistant
+* Additional Programming Languages
+* Personalized Learning Paths
+* Advanced Analytics Dashboard
+* Achievement & Gamification System
+* Web Version of CodeXpert
+
+---
+
+## 👨‍💻 Authors
+
+### Taskeen Abbas
+
+BS Software Engineering
+COMSATS University Islamabad, Attock Campus
+
+### Mushaf Khalil
+
+BS Software Engineering
+COMSATS University Islamabad, Attock Campus
+
+---
+
+## 🎓 Supervisor
+
+**Dr. Sadaf Yasmin**
+COMSATS University Islamabad, Attock Campus
+
+---
+
+## 📈 Project Status
+
+```text
+Frontend Development      ██████████████░░ 90%
+Backend APIs              █████████████░░░ 85%
+AI Integration            █████████████░░░ 85%
+Testing                   ███████████░░░░░ 70%
+Documentation             ██████████████░░ 90%
 ```
 
-Then, and every time you update your native dependencies, run:
+---
 
-```sh
-bundle exec pod install
-```
+<div align="center">
 
-For more information, please visit [CocoaPods Getting Started guide](https://guides.cocoapods.org/using/getting-started.html).
+### ⭐ If you like this project, consider giving it a star!
 
-```sh
-# Using npm
-npm run ios
+Built with ❤️ using React Native, FastAPI, Firestore, ChromaDB and OpenAI.
 
-# OR using Yarn
-yarn ios
-```
-
-If everything is set up correctly, you should see your new app running in the Android Emulator, iOS Simulator, or your connected device.
-
-This is one way to run your app — you can also build it directly from Android Studio or Xcode.
-
-## Step 3: Modify your app
-
-Now that you have successfully run the app, let's make changes!
-
-Open `App.tsx` in your text editor of choice and make some changes. When you save, your app will automatically update and reflect these changes — this is powered by [Fast Refresh](https://reactnative.dev/docs/fast-refresh).
-
-When you want to forcefully reload, for example to reset the state of your app, you can perform a full reload:
-
-- **Android**: Press the <kbd>R</kbd> key twice or select **"Reload"** from the **Dev Menu**, accessed via <kbd>Ctrl</kbd> + <kbd>M</kbd> (Windows/Linux) or <kbd>Cmd ⌘</kbd> + <kbd>M</kbd> (macOS).
-- **iOS**: Press <kbd>R</kbd> in iOS Simulator.
-
-## Congratulations! :tada:
-
-You've successfully run and modified your React Native App. :partying_face:
-
-### Now what?
-
-- If you want to add this new React Native code to an existing application, check out the [Integration guide](https://reactnative.dev/docs/integration-with-existing-apps).
-- If you're curious to learn more about React Native, check out the [docs](https://reactnative.dev/docs/getting-started).
-
-# Troubleshooting
-
-If you're having issues getting the above steps to work, see the [Troubleshooting](https://reactnative.dev/docs/troubleshooting) page.
-
-# Learn More
-
-To learn more about React Native, take a look at the following resources:
-
-- [React Native Website](https://reactnative.dev) - learn more about React Native.
-- [Getting Started](https://reactnative.dev/docs/environment-setup) - an **overview** of React Native and how setup your environment.
-- [Learn the Basics](https://reactnative.dev/docs/getting-started) - a **guided tour** of the React Native **basics**.
-- [Blog](https://reactnative.dev/blog) - read the latest official React Native **Blog** posts.
-- [`@facebook/react-native`](https://github.com/facebook/react-native) - the Open Source; GitHub **repository** for React Native.
+</div>
