@@ -116,23 +116,23 @@ Improved Learning Experience
 
 ### 🔐 Authentication
 
-![Login Screen](images/login.png)
+![Login Screen]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (32).jpeg")
 
 ### 🏠 Dashboard
 
-![Dashboard](images/dashboard.png)
+![Dashboard]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (42).jpeg")
 
 ### 🤖 XpertAI Assistant
 
-![Chatbot](images/chatbot.png)
+![Chatbot]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (16).jpeg")
 
 ### 🏆 Leaderboard
 
-![Leaderboard](images/leaderboard.png)
+![Leaderboard]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (22).jpeg")
 
 ### 👤 Profile
 
-![Profile](images/profile.png)
+![Profile]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (38).jpeg")
 
 ---
 
