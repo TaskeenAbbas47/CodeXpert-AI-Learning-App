@@ -120,19 +120,19 @@ Improved Learning Experience
 
 ### 🏠 Dashboard
 
-![Dashboard]("App screenshots\WhatsApp Image 2026-09-04 at 11.29.45 PM (42).jpeg")
+[Dashboard](App%20screenshots\Dasboard.jpeg)
 
 ### 🤖 XpertAI Assistant
 
-![Chatbot]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (16).jpeg")
+[Chatbot](App%20screenshots\Assistant.jpeg)
 
 ### 🏆 Leaderboard
 
-![Leaderboard]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (22).jpeg")
+[Leaderboard](App%20screenshots\Leaderboard.jpeg)
 
 ### 👤 Profile
 
-![Profile]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (38).jpeg")
+[Profile](App%20screenshots\Profile.jpeg)
 
 ---
 
