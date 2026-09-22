@@ -116,11 +116,11 @@ Improved Learning Experience
 
 ### 🔐 Authentication
 
-![Login Screen]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (32).jpeg")
+![Login Screen]("App screenshots\WhatsApp Image 2026-09-04 at 11.29.45 PM (32).jpeg")
 
 ### 🏠 Dashboard
 
-![Dashboard]("D:\Downloads\WhatsApp Image 2026-09-04 at 11.29.45 PM (42).jpeg")
+![Dashboard]("App screenshots\WhatsApp Image 2026-09-04 at 11.29.45 PM (42).jpeg")
 
 ### 🤖 XpertAI Assistant
 
