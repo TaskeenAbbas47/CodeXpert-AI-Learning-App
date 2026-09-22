@@ -116,7 +116,7 @@ Improved Learning Experience
 
 ### 🔐 Authentication
 
-[Login Screen](App screenshots/Signup.jpeg)
+[Login Screen](App%20screenshots/Signup.jpeg)
 
 ### 🏠 Dashboard
 
