@@ -116,7 +116,7 @@ Improved Learning Experience
 
 ### 🔐 Authentication
 
-![Login Screen](App screenshots\Signup.jpeg)
+![Login Screen](D:\CodeXpert-main\CodeXpert-main\App screenshots\Signup.jpeg)
 
 ### 🏠 Dashboard
 
