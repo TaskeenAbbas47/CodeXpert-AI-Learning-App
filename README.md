@@ -116,7 +116,7 @@ Improved Learning Experience
 
 ### 🔐 Authentication
 
-![Login Screen](App screenshots\WhatsApp Image 2026-09-04 at 11.29.45 PM (32).jpeg)
+![Login Screen](App screenshots\Signup.jpeg)
 
 ### 🏠 Dashboard
 
